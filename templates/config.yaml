@@ -1,0 +1,3 @@
+default:
+  extension: .rb
+  output: themes
