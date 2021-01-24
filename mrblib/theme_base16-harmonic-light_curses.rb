@@ -1,6 +1,7 @@
 # Harmonic16 Light scheme by Jannik Siebert (https://github.com/janniks)
 module Mrbmacs
-  class Base16Harmonic16LightTheme < Base16Theme
+  class Base16HarmonicLightTheme < Base16Theme
+    @@theme_name = "base16-harmonic-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "bf5656"],
       ] 
       super
-      @name = "base16-harmonic-light"
+      @name = @@theme_name
     end
   end
 end

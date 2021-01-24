@@ -1,6 +1,7 @@
 # Flat scheme by Chris Kempson (http://chriskempson.com)
 module Mrbmacs
   class Base16FlatTheme < Base16Theme
+    @@theme_name = "base16-flat"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "be643c"],
       ] 
       super
-      @name = "base16-flat"
+      @name = @@theme_name
     end
   end
 end

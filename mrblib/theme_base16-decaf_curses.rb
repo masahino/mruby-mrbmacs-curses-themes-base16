@@ -1,6 +1,7 @@
 # Decaf scheme by Alex Mirrington (https://github.com/alexmirrington)
 module Mrbmacs
   class Base16DecafTheme < Base16Theme
+    @@theme_name = "base16-decaf"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "ff93b3"],
       ] 
       super
-      @name = "base16-decaf"
+      @name = @@theme_name
     end
   end
 end

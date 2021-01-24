@@ -1,6 +1,7 @@
 # Seti UI scheme by 
 module Mrbmacs
-  class Base16SetiUITheme < Base16Theme
+  class Base16SetiTheme < Base16Theme
+    @@theme_name = "base16-seti"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "8a553f"],
       ] 
       super
-      @name = "base16-seti"
+      @name = @@theme_name
     end
   end
 end

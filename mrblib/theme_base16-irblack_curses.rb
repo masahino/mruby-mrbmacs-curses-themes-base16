@@ -1,6 +1,7 @@
 # IR Black scheme by Timothée Poisot (http://timotheepoisot.fr)
 module Mrbmacs
-  class Base16IRBlackTheme < Base16Theme
+  class Base16IrblackTheme < Base16Theme
+    @@theme_name = "base16-irblack"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b18a3d"],
       ] 
       super
-      @name = "base16-irblack"
+      @name = @@theme_name
     end
   end
 end

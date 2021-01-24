@@ -1,6 +1,7 @@
 # Outrun Dark scheme by Hugo Delahousse (http://github.com/hugodelahousse/)
 module Mrbmacs
   class Base16OutrunDarkTheme < Base16Theme
+    @@theme_name = "base16-outrun-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "f003ef"],
       ] 
       super
-      @name = "base16-outrun-dark"
+      @name = @@theme_name
     end
   end
 end

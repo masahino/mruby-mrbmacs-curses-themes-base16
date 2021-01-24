@@ -1,6 +1,7 @@
 # Snazzy scheme by Chawye Hsu (https://github.com/h404bi) based on Hyper Snazzy Theme (https://github.com/sindresorhus/hyper-snazzy)
 module Mrbmacs
   class Base16SnazzyTheme < Base16Theme
+    @@theme_name = "base16-snazzy"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b2643c"],
       ] 
       super
-      @name = "base16-snazzy"
+      @name = @@theme_name
     end
   end
 end

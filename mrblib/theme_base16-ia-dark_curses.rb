@@ -1,6 +1,7 @@
 # iA Dark scheme by iA Inc. (modified by aramisgithub)
 module Mrbmacs
-  class Base16iADarkTheme < Base16Theme
+  class Base16IaDarkTheme < Base16Theme
+    @@theme_name = "base16-ia-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "8b6c37"],
       ] 
       super
-      @name = "base16-ia-dark"
+      @name = @@theme_name
     end
   end
 end

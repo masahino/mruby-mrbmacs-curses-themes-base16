@@ -1,6 +1,7 @@
 # vulcan scheme by Andrey Varfolomeev
 module Mrbmacs
-  class Base16vulcanTheme < Base16Theme
+  class Base16VulcanTheme < Base16Theme
+    @@theme_name = "base16-vulcan"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "977d7c"],
       ] 
       super
-      @name = "base16-vulcan"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Codeschool scheme by blockloop
 module Mrbmacs
   class Base16CodeschoolTheme < Base16Theme
+    @@theme_name = "base16-codeschool"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "c98344"],
       ] 
       super
-      @name = "base16-codeschool"
+      @name = @@theme_name
     end
   end
 end

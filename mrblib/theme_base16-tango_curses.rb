@@ -1,6 +1,7 @@
 # Tango scheme by @Schnouki, based on the Tango Desktop Project
 module Mrbmacs
   class Base16TangoTheme < Base16Theme
+    @@theme_name = "base16-tango"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "34e2e2"],
       ] 
       super
-      @name = "base16-tango"
+      @name = @@theme_name
     end
   end
 end

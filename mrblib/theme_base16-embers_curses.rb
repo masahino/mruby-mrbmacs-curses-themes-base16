@@ -1,6 +1,7 @@
 # Embers scheme by Jannik Siebert (https://github.com/janniks)
 module Mrbmacs
   class Base16EmbersTheme < Base16Theme
+    @@theme_name = "base16-embers"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "825757"],
       ] 
       super
-      @name = "base16-embers"
+      @name = @@theme_name
     end
   end
 end

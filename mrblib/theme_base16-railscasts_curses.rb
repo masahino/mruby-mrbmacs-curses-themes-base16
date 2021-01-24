@@ -1,6 +1,7 @@
 # Railscasts scheme by Ryan Bates (http://railscasts.com)
 module Mrbmacs
   class Base16RailscastsTheme < Base16Theme
+    @@theme_name = "base16-railscasts"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "bc9458"],
       ] 
       super
-      @name = "base16-railscasts"
+      @name = @@theme_name
     end
   end
 end

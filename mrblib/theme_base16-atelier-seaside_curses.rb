@@ -1,6 +1,7 @@
 # Atelier Seaside scheme by Bram de Haan (http://atelierbramdehaan.nl)
 module Mrbmacs
   class Base16AtelierSeasideTheme < Base16Theme
+    @@theme_name = "base16-atelier-seaside"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "e619c3"],
       ] 
       super
-      @name = "base16-atelier-seaside"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Zenburn scheme by elnawe
 module Mrbmacs
   class Base16ZenburnTheme < Base16Theme
+    @@theme_name = "base16-zenburn"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "000000"],
       ] 
       super
-      @name = "base16-zenburn"
+      @name = @@theme_name
     end
   end
 end

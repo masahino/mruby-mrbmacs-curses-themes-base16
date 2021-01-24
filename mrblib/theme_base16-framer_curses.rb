@@ -1,6 +1,7 @@
 # Framer scheme by Framer (Maintained by Jesse Hoyos)
 module Mrbmacs
   class Base16FramerTheme < Base16Theme
+    @@theme_name = "base16-framer"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b15f4a"],
       ] 
       super
-      @name = "base16-framer"
+      @name = @@theme_name
     end
   end
 end

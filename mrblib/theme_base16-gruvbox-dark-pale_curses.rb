@@ -1,6 +1,7 @@
 # Gruvbox dark, pale scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 module Mrbmacs
-  class Base16Gruvboxdark,paleTheme < Base16Theme
+  class Base16GruvboxDarkPaleTheme < Base16Theme
+    @@theme_name = "base16-gruvbox-dark-pale"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "d65d0e"],
       ] 
       super
-      @name = "base16-gruvbox-dark-pale"
+      @name = @@theme_name
     end
   end
 end

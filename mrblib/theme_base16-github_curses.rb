@@ -1,6 +1,7 @@
 # Github scheme by Defman21
 module Mrbmacs
   class Base16GithubTheme < Base16Theme
+    @@theme_name = "base16-github"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "333333"],
       ] 
       super
-      @name = "base16-github"
+      @name = @@theme_name
     end
   end
 end

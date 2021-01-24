@@ -1,6 +1,7 @@
 # Humanoid dark scheme by Thomas (tasmo) Friese
 module Mrbmacs
-  class Base16HumanoiddarkTheme < Base16Theme
+  class Base16HumanoidDarkTheme < Base16Theme
+    @@theme_name = "base16-humanoid-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b27701"],
       ] 
       super
-      @name = "base16-humanoid-dark"
+      @name = @@theme_name
     end
   end
 end

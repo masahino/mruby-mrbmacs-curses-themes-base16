@@ -1,6 +1,7 @@
 # Atelier Sulphurpool scheme by Bram de Haan (http://atelierbramdehaan.nl)
 module Mrbmacs
   class Base16AtelierSulphurpoolTheme < Base16Theme
+    @@theme_name = "base16-atelier-sulphurpool"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "9c637a"],
       ] 
       super
-      @name = "base16-atelier-sulphurpool"
+      @name = @@theme_name
     end
   end
 end

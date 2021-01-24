@@ -1,6 +1,7 @@
 # Circus scheme by Stephan Boyer (https://github.com/stepchowfun) and Esther Wang (https://github.com/ewang12)
 module Mrbmacs
   class Base16CircusTheme < Base16Theme
+    @@theme_name = "base16-circus"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b888e2"],
       ] 
       super
-      @name = "base16-circus"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Black Metal (Gorgoroth) scheme by metalelf0 (https://github.com/metalelf0)
 module Mrbmacs
-  class Base16BlackMetal(Gorgoroth)Theme < Base16Theme
+  class Base16BlackMetalGorgorothTheme < Base16Theme
+    @@theme_name = "base16-black-metal-gorgoroth"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "444444"],
       ] 
       super
-      @name = "base16-black-metal-gorgoroth"
+      @name = @@theme_name
     end
   end
 end

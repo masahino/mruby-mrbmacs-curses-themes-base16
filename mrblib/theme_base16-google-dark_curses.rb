@@ -1,6 +1,7 @@
 # Google Dark scheme by Seth Wright (http://sethawright.com)
 module Mrbmacs
   class Base16GoogleDarkTheme < Base16Theme
+    @@theme_name = "base16-google-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "3971ed"],
       ] 
       super
-      @name = "base16-google-dark"
+      @name = @@theme_name
     end
   end
 end

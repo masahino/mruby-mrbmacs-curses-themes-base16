@@ -1,6 +1,7 @@
 # Nord scheme by arcticicestudio
 module Mrbmacs
   class Base16NordTheme < Base16Theme
+    @@theme_name = "base16-nord"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "5e81ac"],
       ] 
       super
-      @name = "base16-nord"
+      @name = @@theme_name
     end
   end
 end

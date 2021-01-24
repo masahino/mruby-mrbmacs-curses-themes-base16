@@ -1,6 +1,7 @@
 # Mellow Purple scheme by gidsi
 module Mrbmacs
   class Base16MellowPurpleTheme < Base16Theme
+    @@theme_name = "base16-mellow-purple"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "4d6fff"],
       ] 
       super
-      @name = "base16-mellow-purple"
+      @name = @@theme_name
     end
   end
 end

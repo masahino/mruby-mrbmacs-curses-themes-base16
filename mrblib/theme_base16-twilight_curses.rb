@@ -1,6 +1,7 @@
 # Twilight scheme by David Hart (https://github.com/hartbit)
 module Mrbmacs
   class Base16TwilightTheme < Base16Theme
+    @@theme_name = "base16-twilight"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "9b703f"],
       ] 
       super
-      @name = "base16-twilight"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Brush Trees Dark scheme by Abraham White &lt;abelincoln.white@gmail.com&gt;
 module Mrbmacs
-  class Base16BrushTreesDarkTheme < Base16Theme
+  class Base16BrushtreesDarkTheme < Base16Theme
+    @@theme_name = "base16-brushtrees-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b39f9f"],
       ] 
       super
-      @name = "base16-brushtrees-dark"
+      @name = @@theme_name
     end
   end
 end

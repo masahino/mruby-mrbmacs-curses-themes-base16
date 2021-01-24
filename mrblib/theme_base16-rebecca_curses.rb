@@ -1,6 +1,7 @@
 # Rebecca scheme by Victor Borja (http://github.com/vic) based on Rebecca Theme (http://github.com/vic/rebecca-theme)
 module Mrbmacs
   class Base16RebeccaTheme < Base16Theme
+    @@theme_name = "base16-rebecca"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "ff79c6"],
       ] 
       super
-      @name = "base16-rebecca"
+      @name = @@theme_name
     end
   end
 end

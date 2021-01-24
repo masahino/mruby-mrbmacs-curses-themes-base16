@@ -1,6 +1,7 @@
 # Sagelight scheme by Carter Veldhuizen
 module Mrbmacs
   class Base16SagelightTheme < Base16Theme
+    @@theme_name = "base16-sagelight"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "d2b2a0"],
       ] 
       super
-      @name = "base16-sagelight"
+      @name = @@theme_name
     end
   end
 end

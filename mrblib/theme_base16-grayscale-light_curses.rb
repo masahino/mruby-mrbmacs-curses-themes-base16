@@ -1,6 +1,7 @@
 # Grayscale Light scheme by Alexandre Gavioli (https://github.com/Alexx2/)
 module Mrbmacs
   class Base16GrayscaleLightTheme < Base16Theme
+    @@theme_name = "base16-grayscale-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "5e5e5e"],
       ] 
       super
-      @name = "base16-grayscale-light"
+      @name = @@theme_name
     end
   end
 end

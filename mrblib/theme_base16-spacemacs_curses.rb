@@ -1,6 +1,7 @@
 # Spacemacs scheme by Nasser Alshammari (https://github.com/nashamri/spacemacs-theme)
 module Mrbmacs
   class Base16SpacemacsTheme < Base16Theme
+    @@theme_name = "base16-spacemacs"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b03060"],
       ] 
       super
-      @name = "base16-spacemacs"
+      @name = @@theme_name
     end
   end
 end

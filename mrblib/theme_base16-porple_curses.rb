@@ -1,6 +1,7 @@
 # Porple scheme by Niek den Breeje (https://github.com/AuditeMarlow)
 module Mrbmacs
   class Base16PorpleTheme < Base16Theme
+    @@theme_name = "base16-porple"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "986841"],
       ] 
       super
-      @name = "base16-porple"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Material Vivid scheme by joshyrobot
 module Mrbmacs
   class Base16MaterialVividTheme < Base16Theme
+    @@theme_name = "base16-material-vivid"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "8d6e63"],
       ] 
       super
-      @name = "base16-material-vivid"
+      @name = @@theme_name
     end
   end
 end

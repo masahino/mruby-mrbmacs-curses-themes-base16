@@ -1,6 +1,7 @@
 # Equilibrium Light scheme by Carlo Abelli
 module Mrbmacs
   class Base16EquilibriumLightTheme < Base16Theme
+    @@theme_name = "base16-equilibrium-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "c42775"],
       ] 
       super
-      @name = "base16-equilibrium-light"
+      @name = @@theme_name
     end
   end
 end

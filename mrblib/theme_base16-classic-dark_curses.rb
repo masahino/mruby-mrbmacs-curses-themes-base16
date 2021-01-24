@@ -1,6 +1,7 @@
 # Classic Dark scheme by Jason Heeris (http://heeris.id.au)
 module Mrbmacs
   class Base16ClassicDarkTheme < Base16Theme
+    @@theme_name = "base16-classic-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "8f5536"],
       ] 
       super
-      @name = "base16-classic-dark"
+      @name = @@theme_name
     end
   end
 end

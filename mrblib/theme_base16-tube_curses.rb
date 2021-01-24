@@ -1,6 +1,7 @@
 # London Tube scheme by Jan T. Sott
 module Mrbmacs
-  class Base16LondonTubeTheme < Base16Theme
+  class Base16TubeTheme < Base16Theme
+    @@theme_name = "base16-tube"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b06110"],
       ] 
       super
-      @name = "base16-tube"
+      @name = @@theme_name
     end
   end
 end

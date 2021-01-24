@@ -1,6 +1,7 @@
 # Ashes scheme by Jannik Siebert (https://github.com/janniks)
 module Mrbmacs
   class Base16AshesTheme < Base16Theme
+    @@theme_name = "base16-ashes"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "c79595"],
       ] 
       super
-      @name = "base16-ashes"
+      @name = @@theme_name
     end
   end
 end

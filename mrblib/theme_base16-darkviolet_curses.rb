@@ -1,6 +1,7 @@
 # Dark Violet scheme by ruler501 (https://github.com/ruler501/base16-darkviolet)
 module Mrbmacs
-  class Base16DarkVioletTheme < Base16Theme
+  class Base16DarkvioletTheme < Base16Theme
+    @@theme_name = "base16-darkviolet"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "a886bf"],
       ] 
       super
-      @name = "base16-darkviolet"
+      @name = @@theme_name
     end
   end
 end

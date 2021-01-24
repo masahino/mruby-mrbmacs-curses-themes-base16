@@ -1,6 +1,7 @@
 # Solar Flare Light scheme by Chuck Harmston (https://chuck.harmston.ch)
 module Mrbmacs
-  class Base16SolarFlareLightTheme < Base16Theme
+  class Base16SolarflareLightTheme < Base16Theme
+    @@theme_name = "base16-solarflare-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "d73c9a"],
       ] 
       super
-      @name = "base16-solarflare-light"
+      @name = @@theme_name
     end
   end
 end

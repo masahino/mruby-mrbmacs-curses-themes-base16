@@ -1,6 +1,7 @@
 # Cupcake scheme by Chris Kempson (http://chriskempson.com)
 module Mrbmacs
   class Base16CupcakeTheme < Base16Theme
+    @@theme_name = "base16-cupcake"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "baa58c"],
       ] 
       super
-      @name = "base16-cupcake"
+      @name = @@theme_name
     end
   end
 end

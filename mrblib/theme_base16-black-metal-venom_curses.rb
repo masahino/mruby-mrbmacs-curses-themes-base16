@@ -1,6 +1,7 @@
 # Black Metal (Venom) scheme by metalelf0 (https://github.com/metalelf0)
 module Mrbmacs
-  class Base16BlackMetal(Venom)Theme < Base16Theme
+  class Base16BlackMetalVenomTheme < Base16Theme
+    @@theme_name = "base16-black-metal-venom"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "444444"],
       ] 
       super
-      @name = "base16-black-metal-venom"
+      @name = @@theme_name
     end
   end
 end

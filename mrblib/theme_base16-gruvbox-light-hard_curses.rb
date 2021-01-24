@@ -1,6 +1,7 @@
 # Gruvbox light, hard scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 module Mrbmacs
-  class Base16Gruvboxlight,hardTheme < Base16Theme
+  class Base16GruvboxLightHardTheme < Base16Theme
+    @@theme_name = "base16-gruvbox-light-hard"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "d65d0e"],
       ] 
       super
-      @name = "base16-gruvbox-light-hard"
+      @name = @@theme_name
     end
   end
 end

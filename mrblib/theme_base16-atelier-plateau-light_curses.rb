@@ -1,6 +1,7 @@
 # Atelier Plateau Light scheme by Bram de Haan (http://atelierbramdehaan.nl)
 module Mrbmacs
   class Base16AtelierPlateauLightTheme < Base16Theme
+    @@theme_name = "base16-atelier-plateau-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "bd5187"],
       ] 
       super
-      @name = "base16-atelier-plateau-light"
+      @name = @@theme_name
     end
   end
 end

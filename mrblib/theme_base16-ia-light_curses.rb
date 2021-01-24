@@ -1,6 +1,7 @@
 # iA Light scheme by iA Inc. (modified by aramisgithub)
 module Mrbmacs
-  class Base16iALightTheme < Base16Theme
+  class Base16IaLightTheme < Base16Theme
+    @@theme_name = "base16-ia-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "8b6c37"],
       ] 
       super
-      @name = "base16-ia-light"
+      @name = @@theme_name
     end
   end
 end

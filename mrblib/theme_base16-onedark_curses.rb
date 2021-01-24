@@ -1,6 +1,7 @@
 # OneDark scheme by Lalit Magant (http://github.com/tilal6991)
 module Mrbmacs
-  class Base16OneDarkTheme < Base16Theme
+  class Base16OnedarkTheme < Base16Theme
+    @@theme_name = "base16-onedark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "be5046"],
       ] 
       super
-      @name = "base16-onedark"
+      @name = @@theme_name
     end
   end
 end

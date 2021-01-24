@@ -1,6 +1,7 @@
 # Nebula scheme by Gabriel Fontes (https://github.com/Misterio77)
 module Mrbmacs
   class Base16NebulaTheme < Base16Theme
+    @@theme_name = "base16-nebula"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "8c70a7"],
       ] 
       super
-      @name = "base16-nebula"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Synth Midnight Terminal Dark scheme by Michaël Ball (http://github.com/michael-ball/)
 module Mrbmacs
-  class Base16SynthMidnightTerminalDarkTheme < Base16Theme
+  class Base16SynthMidnightDarkTheme < Base16Theme
+    @@theme_name = "base16-synth-midnight-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "cd6320"],
       ] 
       super
-      @name = "base16-synth-midnight-dark"
+      @name = @@theme_name
     end
   end
 end

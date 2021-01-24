@@ -1,6 +1,7 @@
 # XCode Dusk scheme by Elsa Gonsiorowski (https://github.com/gonsie)
 module Mrbmacs
-  class Base16XCodeDuskTheme < Base16Theme
+  class Base16XcodeDuskTheme < Base16Theme
+    @@theme_name = "base16-xcode-dusk"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "c77c48"],
       ] 
       super
-      @name = "base16-xcode-dusk"
+      @name = @@theme_name
     end
   end
 end

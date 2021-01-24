@@ -1,6 +1,7 @@
 # Unikitty Dark scheme by Josh W Lewis (@joshwlewis)
 module Mrbmacs
   class Base16UnikittyDarkTheme < Base16Theme
+    @@theme_name = "base16-unikitty-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "c720ca"],
       ] 
       super
-      @name = "base16-unikitty-dark"
+      @name = @@theme_name
     end
   end
 end

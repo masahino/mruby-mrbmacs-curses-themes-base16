@@ -1,6 +1,7 @@
 # Kimber scheme by Mishka Nguyen (https://github.com/akhsiM)
 module Mrbmacs
   class Base16KimberTheme < Base16Theme
+    @@theme_name = "base16-kimber"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "704f4f"],
       ] 
       super
-      @name = "base16-kimber"
+      @name = @@theme_name
     end
   end
 end

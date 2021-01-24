@@ -1,6 +1,7 @@
 # Dracula scheme by Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
 module Mrbmacs
   class Base16DraculaTheme < Base16Theme
+    @@theme_name = "base16-dracula"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "00f769"],
       ] 
       super
-      @name = "base16-dracula"
+      @name = @@theme_name
     end
   end
 end

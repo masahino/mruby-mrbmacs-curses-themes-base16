@@ -1,6 +1,7 @@
 # Atlas scheme by Alex Lende (https://ajlende.com)
 module Mrbmacs
   class Base16AtlasTheme < Base16Theme
+    @@theme_name = "base16-atlas"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "c43060"],
       ] 
       super
-      @name = "base16-atlas"
+      @name = @@theme_name
     end
   end
 end

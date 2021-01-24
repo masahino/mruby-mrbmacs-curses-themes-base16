@@ -1,6 +1,7 @@
 # Sandcastle scheme by George Essig (https://github.com/gessig)
 module Mrbmacs
   class Base16SandcastleTheme < Base16Theme
+    @@theme_name = "base16-sandcastle"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "a87322"],
       ] 
       super
-      @name = "base16-sandcastle"
+      @name = @@theme_name
     end
   end
 end

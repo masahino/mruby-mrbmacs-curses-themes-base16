@@ -1,6 +1,7 @@
 # Pasque scheme by Gabriel Fontes (https://github.com/Misterio77)
 module Mrbmacs
   class Base16PasqueTheme < Base16Theme
+    @@theme_name = "base16-pasque"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "59325c"],
       ] 
       super
-      @name = "base16-pasque"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Gigavolt scheme by Aidan Swope (http://github.com/Whillikers)
 module Mrbmacs
   class Base16GigavoltTheme < Base16Theme
+    @@theme_name = "base16-gigavolt"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "6187ff"],
       ] 
       super
-      @name = "base16-gigavolt"
+      @name = @@theme_name
     end
   end
 end

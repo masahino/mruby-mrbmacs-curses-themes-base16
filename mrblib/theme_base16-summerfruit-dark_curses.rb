@@ -1,6 +1,7 @@
 # Summerfruit Dark scheme by Christopher Corley (http://christop.club/)
 module Mrbmacs
   class Base16SummerfruitDarkTheme < Base16Theme
+    @@theme_name = "base16-summerfruit-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "cc6633"],
       ] 
       super
-      @name = "base16-summerfruit-dark"
+      @name = @@theme_name
     end
   end
 end

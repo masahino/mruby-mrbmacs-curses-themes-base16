@@ -1,6 +1,7 @@
 # Isotope scheme by Jan T. Sott
 module Mrbmacs
   class Base16IsotopeTheme < Base16Theme
+    @@theme_name = "base16-isotope"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "3300ff"],
       ] 
       super
-      @name = "base16-isotope"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Icy Dark scheme by icyphox (https://icyphox.ga)
 module Mrbmacs
-  class Base16IcyDarkTheme < Base16Theme
+  class Base16IcyTheme < Base16Theme
+    @@theme_name = "base16-icy"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "0097a7"],
       ] 
       super
-      @name = "base16-icy"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Horizon Light scheme by Michaël Ball (http://github.com/michael-ball/)
 module Mrbmacs
   class Base16HorizonLightTheme < Base16Theme
+    @@theme_name = "base16-horizon-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "e58c92"],
       ] 
       super
-      @name = "base16-horizon-light"
+      @name = @@theme_name
     end
   end
 end

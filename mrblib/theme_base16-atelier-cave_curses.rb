@@ -1,6 +1,7 @@
 # Atelier Cave scheme by Bram de Haan (http://atelierbramdehaan.nl)
 module Mrbmacs
   class Base16AtelierCaveTheme < Base16Theme
+    @@theme_name = "base16-atelier-cave"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "bf40bf"],
       ] 
       super
-      @name = "base16-atelier-cave"
+      @name = @@theme_name
     end
   end
 end

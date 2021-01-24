@@ -1,6 +1,7 @@
 # Silk Light scheme by Gabriel Fontes (https://github.com/Misterio77)
 module Mrbmacs
   class Base16SilkLightTheme < Base16Theme
+    @@theme_name = "base16-silk-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "865369"],
       ] 
       super
-      @name = "base16-silk-light"
+      @name = @@theme_name
     end
   end
 end

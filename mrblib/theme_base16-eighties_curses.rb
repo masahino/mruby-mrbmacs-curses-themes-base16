@@ -1,6 +1,7 @@
 # Eighties scheme by Chris Kempson (http://chriskempson.com)
 module Mrbmacs
   class Base16EightiesTheme < Base16Theme
+    @@theme_name = "base16-eighties"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "d27b53"],
       ] 
       super
-      @name = "base16-eighties"
+      @name = @@theme_name
     end
   end
 end

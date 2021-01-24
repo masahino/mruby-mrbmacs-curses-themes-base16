@@ -1,6 +1,7 @@
 # Edge Dark scheme by cjayross (https://github.com/cjayross)
 module Mrbmacs
   class Base16EdgeDarkTheme < Base16Theme
+    @@theme_name = "base16-edge-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "5ebaa5"],
       ] 
       super
-      @name = "base16-edge-dark"
+      @name = @@theme_name
     end
   end
 end

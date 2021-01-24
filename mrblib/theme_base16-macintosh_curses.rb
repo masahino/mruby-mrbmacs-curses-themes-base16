@@ -1,6 +1,7 @@
 # Macintosh scheme by Rebecca Bettencourt (http://www.kreativekorp.com)
 module Mrbmacs
   class Base16MacintoshTheme < Base16Theme
+    @@theme_name = "base16-macintosh"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "90713a"],
       ] 
       super
-      @name = "base16-macintosh"
+      @name = @@theme_name
     end
   end
 end

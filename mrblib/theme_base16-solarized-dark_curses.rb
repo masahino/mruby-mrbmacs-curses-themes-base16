@@ -1,6 +1,7 @@
 # Solarized Dark scheme by Ethan Schoonover (modified by aramisgithub)
 module Mrbmacs
   class Base16SolarizedDarkTheme < Base16Theme
+    @@theme_name = "base16-solarized-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "d33682"],
       ] 
       super
-      @name = "base16-solarized-dark"
+      @name = @@theme_name
     end
   end
 end

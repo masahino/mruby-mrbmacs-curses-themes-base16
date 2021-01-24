@@ -1,6 +1,7 @@
 # Materia scheme by Defman21
 module Mrbmacs
   class Base16MateriaTheme < Base16Theme
+    @@theme_name = "base16-materia"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "ec5f67"],
       ] 
       super
-      @name = "base16-materia"
+      @name = @@theme_name
     end
   end
 end

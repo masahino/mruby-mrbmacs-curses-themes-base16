@@ -1,6 +1,7 @@
 # PaperColor Dark scheme by Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
 module Mrbmacs
-  class Base16PaperColorDarkTheme < Base16Theme
+  class Base16PapercolorDarkTheme < Base16Theme
+    @@theme_name = "base16-papercolor-dark"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "5f8787"],
       ] 
       super
-      @name = "base16-papercolor-dark"
+      @name = @@theme_name
     end
   end
 end

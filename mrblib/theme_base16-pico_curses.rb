@@ -1,6 +1,7 @@
 # Pico scheme by PICO-8 (http://www.lexaloffle.com/pico-8.php)
 module Mrbmacs
   class Base16PicoTheme < Base16Theme
+    @@theme_name = "base16-pico"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "ffccaa"],
       ] 
       super
-      @name = "base16-pico"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Material Darker scheme by Nate Peterson
 module Mrbmacs
   class Base16MaterialDarkerTheme < Base16Theme
+    @@theme_name = "base16-material-darker"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "ff5370"],
       ] 
       super
-      @name = "base16-material-darker"
+      @name = @@theme_name
     end
   end
 end

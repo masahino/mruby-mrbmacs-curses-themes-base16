@@ -1,6 +1,7 @@
 # Eva Dim scheme by kjakapat (https://github.com/kjakapat)
 module Mrbmacs
   class Base16EvaDimTheme < Base16Theme
+    @@theme_name = "base16-eva-dim"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "bb64a9"],
       ] 
       super
-      @name = "base16-eva-dim"
+      @name = @@theme_name
     end
   end
 end

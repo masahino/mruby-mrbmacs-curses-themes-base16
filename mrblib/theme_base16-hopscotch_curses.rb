@@ -1,6 +1,7 @@
 # Hopscotch scheme by Jan T. Sott
 module Mrbmacs
   class Base16HopscotchTheme < Base16Theme
+    @@theme_name = "base16-hopscotch"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b33508"],
       ] 
       super
-      @name = "base16-hopscotch"
+      @name = @@theme_name
     end
   end
 end

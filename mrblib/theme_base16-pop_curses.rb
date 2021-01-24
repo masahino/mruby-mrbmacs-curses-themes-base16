@@ -1,6 +1,7 @@
 # Pop scheme by Chris Kempson (http://chriskempson.com)
 module Mrbmacs
   class Base16PopTheme < Base16Theme
+    @@theme_name = "base16-pop"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "7a2d00"],
       ] 
       super
-      @name = "base16-pop"
+      @name = @@theme_name
     end
   end
 end

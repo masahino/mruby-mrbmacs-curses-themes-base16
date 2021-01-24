@@ -1,6 +1,7 @@
 # darkmoss scheme by Gabriel Avanzi (https://github.com/avanzzzi)
 module Mrbmacs
-  class Base16darkmossTheme < Base16Theme
+  class Base16DarkmossTheme < Base16Theme
+    @@theme_name = "base16-darkmoss"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "d27b53"],
       ] 
       super
-      @name = "base16-darkmoss"
+      @name = @@theme_name
     end
   end
 end

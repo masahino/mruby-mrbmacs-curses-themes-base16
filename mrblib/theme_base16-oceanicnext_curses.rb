@@ -1,6 +1,7 @@
 # OceanicNext scheme by https://github.com/voronianski/oceanic-next-color-scheme
 module Mrbmacs
-  class Base16OceanicNextTheme < Base16Theme
+  class Base16OceanicnextTheme < Base16Theme
+    @@theme_name = "base16-oceanicnext"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "ab7967"],
       ] 
       super
-      @name = "base16-oceanicnext"
+      @name = @@theme_name
     end
   end
 end

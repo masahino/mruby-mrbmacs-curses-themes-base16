@@ -1,6 +1,7 @@
 # Darktooth scheme by Jason Milkins (https://github.com/jasonm23)
 module Mrbmacs
   class Base16DarktoothTheme < Base16Theme
+    @@theme_name = "base16-darktooth"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "a87322"],
       ] 
       super
-      @name = "base16-darktooth"
+      @name = @@theme_name
     end
   end
 end

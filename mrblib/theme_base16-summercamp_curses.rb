@@ -1,6 +1,7 @@
 # summercamp scheme by zoe firi (zoefiri.github.io)
 module Mrbmacs
-  class Base16summercampTheme < Base16Theme
+  class Base16SummercampTheme < Base16Theme
+    @@theme_name = "base16-summercamp"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "f69be7"],
       ] 
       super
-      @name = "base16-summercamp"
+      @name = @@theme_name
     end
   end
 end

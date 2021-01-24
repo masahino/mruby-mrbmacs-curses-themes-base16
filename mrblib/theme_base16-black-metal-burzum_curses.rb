@@ -1,6 +1,7 @@
 # Black Metal (Burzum) scheme by metalelf0 (https://github.com/metalelf0)
 module Mrbmacs
-  class Base16BlackMetal(Burzum)Theme < Base16Theme
+  class Base16BlackMetalBurzumTheme < Base16Theme
+    @@theme_name = "base16-black-metal-burzum"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "444444"],
       ] 
       super
-      @name = "base16-black-metal-burzum"
+      @name = @@theme_name
     end
   end
 end

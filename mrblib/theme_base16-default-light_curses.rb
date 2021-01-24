@@ -1,6 +1,7 @@
 # Default Light scheme by Chris Kempson (http://chriskempson.com)
 module Mrbmacs
   class Base16DefaultLightTheme < Base16Theme
+    @@theme_name = "base16-default-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "a16946"],
       ] 
       super
-      @name = "base16-default-light"
+      @name = @@theme_name
     end
   end
 end

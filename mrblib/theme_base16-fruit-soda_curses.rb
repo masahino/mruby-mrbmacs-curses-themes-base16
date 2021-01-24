@@ -1,6 +1,7 @@
 # Fruit Soda scheme by jozip
 module Mrbmacs
   class Base16FruitSodaTheme < Base16Theme
+    @@theme_name = "base16-fruit-soda"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b16f40"],
       ] 
       super
-      @name = "base16-fruit-soda"
+      @name = @@theme_name
     end
   end
 end

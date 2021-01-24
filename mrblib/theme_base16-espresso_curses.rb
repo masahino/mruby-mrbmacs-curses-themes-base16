@@ -1,6 +1,7 @@
 # Espresso scheme by Alex Mirrington (https://github.com/alexmirrington)
 module Mrbmacs
   class Base16EspressoTheme < Base16Theme
+    @@theme_name = "base16-espresso"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "f97394"],
       ] 
       super
-      @name = "base16-espresso"
+      @name = @@theme_name
     end
   end
 end

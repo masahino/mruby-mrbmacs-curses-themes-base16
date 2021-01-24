@@ -1,6 +1,7 @@
 # Monokai scheme by Wimer Hazenberg (http://www.monokai.nl)
 module Mrbmacs
   class Base16MonokaiTheme < Base16Theme
+    @@theme_name = "base16-monokai"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "cc6633"],
       ] 
       super
-      @name = "base16-monokai"
+      @name = @@theme_name
     end
   end
 end

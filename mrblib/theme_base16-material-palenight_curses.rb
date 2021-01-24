@@ -1,6 +1,7 @@
 # Material Palenight scheme by Nate Peterson
 module Mrbmacs
   class Base16MaterialPalenightTheme < Base16Theme
+    @@theme_name = "base16-material-palenight"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "ff5370"],
       ] 
       super
-      @name = "base16-material-palenight"
+      @name = @@theme_name
     end
   end
 end

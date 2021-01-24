@@ -1,6 +1,7 @@
 # Hardcore scheme by Chris Caller
 module Mrbmacs
   class Base16HardcoreTheme < Base16Theme
+    @@theme_name = "base16-hardcore"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "e8b882"],
       ] 
       super
-      @name = "base16-hardcore"
+      @name = @@theme_name
     end
   end
 end

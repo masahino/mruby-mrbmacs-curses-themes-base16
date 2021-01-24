@@ -1,6 +1,7 @@
 # PhD scheme by Hennig Hasemann (http://leetless.de/vim.html)
 module Mrbmacs
-  class Base16PhDTheme < Base16Theme
+  class Base16PhdTheme < Base16Theme
+    @@theme_name = "base16-phd"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b08060"],
       ] 
       super
-      @name = "base16-phd"
+      @name = @@theme_name
     end
   end
 end

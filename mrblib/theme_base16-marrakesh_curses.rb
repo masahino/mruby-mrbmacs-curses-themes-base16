@@ -1,6 +1,7 @@
 # Marrakesh scheme by Alexandre Gavioli (http://github.com/Alexx2/)
 module Mrbmacs
   class Base16MarrakeshTheme < Base16Theme
+    @@theme_name = "base16-marrakesh"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b3588e"],
       ] 
       super
-      @name = "base16-marrakesh"
+      @name = @@theme_name
     end
   end
 end

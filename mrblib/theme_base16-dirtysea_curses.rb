@@ -1,6 +1,7 @@
 # dirtysea scheme by Kahlil (Kal) Hodgson
 module Mrbmacs
-  class Base16dirtyseaTheme < Base16Theme
+  class Base16DirtyseaTheme < Base16Theme
+    @@theme_name = "base16-dirtysea"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "755b00"],
       ] 
       super
-      @name = "base16-dirtysea"
+      @name = @@theme_name
     end
   end
 end

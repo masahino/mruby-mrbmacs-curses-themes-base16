@@ -1,6 +1,7 @@
 # Tomorrow scheme by Chris Kempson (http://chriskempson.com)
 module Mrbmacs
   class Base16TomorrowTheme < Base16Theme
+    @@theme_name = "base16-tomorrow"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "a3685a"],
       ] 
       super
-      @name = "base16-tomorrow"
+      @name = @@theme_name
     end
   end
 end

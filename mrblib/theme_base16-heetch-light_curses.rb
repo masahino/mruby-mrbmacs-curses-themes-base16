@@ -1,6 +1,7 @@
 # Heetch Light scheme by Geoffrey Teale (tealeg@gmail.com)
 module Mrbmacs
   class Base16HeetchLightTheme < Base16Theme
+    @@theme_name = "base16-heetch-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "dedae2"],
       ] 
       super
-      @name = "base16-heetch-light"
+      @name = @@theme_name
     end
   end
 end

@@ -1,6 +1,7 @@
 # Atelier Forest scheme by Bram de Haan (http://atelierbramdehaan.nl)
 module Mrbmacs
   class Base16AtelierForestTheme < Base16Theme
+    @@theme_name = "base16-atelier-forest"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "c33ff3"],
       ] 
       super
-      @name = "base16-atelier-forest"
+      @name = @@theme_name
     end
   end
 end

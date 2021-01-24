@@ -1,6 +1,7 @@
 # One Light scheme by Daniel Pfeifer (http://github.com/purpleKarrot)
 module Mrbmacs
   class Base16OneLightTheme < Base16Theme
+    @@theme_name = "base16-one-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "986801"],
       ] 
       super
-      @name = "base16-one-light"
+      @name = @@theme_name
     end
   end
 end

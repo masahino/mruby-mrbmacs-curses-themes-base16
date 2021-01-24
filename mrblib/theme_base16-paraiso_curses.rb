@@ -1,6 +1,7 @@
 # Paraiso scheme by Jan T. Sott
 module Mrbmacs
   class Base16ParaisoTheme < Base16Theme
+    @@theme_name = "base16-paraiso"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "e96ba8"],
       ] 
       super
-      @name = "base16-paraiso"
+      @name = @@theme_name
     end
   end
 end

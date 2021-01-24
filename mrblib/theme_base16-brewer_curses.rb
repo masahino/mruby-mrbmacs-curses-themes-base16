@@ -1,6 +1,7 @@
 # Brewer scheme by Timothée Poisot (http://github.com/tpoisot)
 module Mrbmacs
   class Base16BrewerTheme < Base16Theme
+    @@theme_name = "base16-brewer"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "b15928"],
       ] 
       super
-      @name = "base16-brewer"
+      @name = @@theme_name
     end
   end
 end

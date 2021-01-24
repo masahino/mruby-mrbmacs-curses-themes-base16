@@ -1,6 +1,7 @@
 # Atelier Heath Light scheme by Bram de Haan (http://atelierbramdehaan.nl)
 module Mrbmacs
   class Base16AtelierHeathLightTheme < Base16Theme
+    @@theme_name = "base16-atelier-heath-light"
     def initialize
       curses_init
       @color_list = [
@@ -22,7 +23,7 @@ module Mrbmacs
         ["BASE0F", 14, "cc33cc"],
       ] 
       super
-      @name = "base16-atelier-heath-light"
+      @name = @@theme_name
     end
   end
 end
