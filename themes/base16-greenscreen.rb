@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-greenscreen_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-greenscreen.rb", "w") do |f|
 f.puts "# Green Screen scheme by Chris Kempson (http://chriskempson.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Green Screen".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Green Screen".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "greenscreen".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-greenscreen"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "001100"],
-        ["BASE01", 10, "003300"],
-        ["BASE02", 11, "005500"],
-        ["BASE03",  8, "007700"],
-        ["BASE04", 12, "009900"],
-        ["BASE05",  7, "00bb00"],
-        ["BASE06", 13, "00dd00"],
-        ["BASE07", 15, "00ff00"],
-        ["BASE08",  1, "007700"],
-        ["BASE09",  9, "009900"],
-        ["BASE0A",  3, "007700"],
-        ["BASE0B",  2, "00bb00"],
-        ["BASE0C",  6, "005500"],
-        ["BASE0D",  4, "009900"],
-        ["BASE0E",  5, "00bb00"],
-        ["BASE0F", 14, "005500"],
-      ] 
+      @@base00 = 0x001100
+      @@base01 = 0x003300
+      @@base02 = 0x005500
+      @@base03 = 0x007700
+      @@base04 = 0x009900
+      @@base05 = 0x00bb00
+      @@base06 = 0x00dd00
+      @@base07 = 0x00ff00
+      @@base08 = 0x007700
+      @@base09 = 0x009900
+      @@base0A = 0x007700
+      @@base0B = 0x00bb00
+      @@base0C = 0x005500
+      @@base0D = 0x009900
+      @@base0E = 0x00bb00
+      @@base0F = 0x005500
       super
-      @name = "base16-greenscreen"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-gigavolt_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-gigavolt.rb", "w") do |f|
 f.puts "# Gigavolt scheme by Aidan Swope (http://github.com/Whillikers)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Gigavolt".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Gigavolt".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "gigavolt".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-gigavolt"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "202126"],
-        ["BASE01", 10, "2d303d"],
-        ["BASE02", 11, "5a576e"],
-        ["BASE03",  8, "a1d2e6"],
-        ["BASE04", 12, "cad3ff"],
-        ["BASE05",  7, "e9e7e1"],
-        ["BASE06", 13, "eff0f9"],
-        ["BASE07", 15, "f2fbff"],
-        ["BASE08",  1, "ff661a"],
-        ["BASE09",  9, "19f988"],
-        ["BASE0A",  3, "ffdc2d"],
-        ["BASE0B",  2, "f2e6a9"],
-        ["BASE0C",  6, "fb6acb"],
-        ["BASE0D",  4, "40bfff"],
-        ["BASE0E",  5, "ae94f9"],
-        ["BASE0F", 14, "6187ff"],
-      ] 
+      @@base00 = 0x202126
+      @@base01 = 0x2d303d
+      @@base02 = 0x5a576e
+      @@base03 = 0xa1d2e6
+      @@base04 = 0xcad3ff
+      @@base05 = 0xe9e7e1
+      @@base06 = 0xeff0f9
+      @@base07 = 0xf2fbff
+      @@base08 = 0xff661a
+      @@base09 = 0x19f988
+      @@base0A = 0xffdc2d
+      @@base0B = 0xf2e6a9
+      @@base0C = 0xfb6acb
+      @@base0D = 0x40bfff
+      @@base0E = 0xae94f9
+      @@base0F = 0x6187ff
       super
-      @name = "base16-gigavolt"
+      @name = @@theme_name
     end
   end
 end

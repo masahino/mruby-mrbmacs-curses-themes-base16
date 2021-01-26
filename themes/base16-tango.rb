@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-tango_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-tango.rb", "w") do |f|
 f.puts "# Tango scheme by @Schnouki, based on the Tango Desktop Project"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Tango".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Tango".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "tango".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-tango"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "2e3436"],
-        ["BASE01", 10, "8ae234"],
-        ["BASE02", 11, "fce94f"],
-        ["BASE03",  8, "555753"],
-        ["BASE04", 12, "729fcf"],
-        ["BASE05",  7, "d3d7cf"],
-        ["BASE06", 13, "ad7fa8"],
-        ["BASE07", 15, "eeeeec"],
-        ["BASE08",  1, "cc0000"],
-        ["BASE09",  9, "ef2929"],
-        ["BASE0A",  3, "c4a000"],
-        ["BASE0B",  2, "4e9a06"],
-        ["BASE0C",  6, "06989a"],
-        ["BASE0D",  4, "3465a4"],
-        ["BASE0E",  5, "75507b"],
-        ["BASE0F", 14, "34e2e2"],
-      ] 
+      @@base00 = 0x2e3436
+      @@base01 = 0x8ae234
+      @@base02 = 0xfce94f
+      @@base03 = 0x555753
+      @@base04 = 0x729fcf
+      @@base05 = 0xd3d7cf
+      @@base06 = 0xad7fa8
+      @@base07 = 0xeeeeec
+      @@base08 = 0xcc0000
+      @@base09 = 0xef2929
+      @@base0A = 0xc4a000
+      @@base0B = 0x4e9a06
+      @@base0C = 0x06989a
+      @@base0D = 0x3465a4
+      @@base0E = 0x75507b
+      @@base0F = 0x34e2e2
       super
-      @name = "base16-tango"
+      @name = @@theme_name
     end
   end
 end

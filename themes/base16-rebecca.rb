@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-rebecca_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-rebecca.rb", "w") do |f|
 f.puts "# Rebecca scheme by Victor Borja (http://github.com/vic) based on Rebecca Theme (http://github.com/vic/rebecca-theme)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Rebecca".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Rebecca".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "rebecca".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-rebecca"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "292a44"],
-        ["BASE01", 10, "663399"],
-        ["BASE02", 11, "383a62"],
-        ["BASE03",  8, "666699"],
-        ["BASE04", 12, "a0a0c5"],
-        ["BASE05",  7, "f1eff8"],
-        ["BASE06", 13, "ccccff"],
-        ["BASE07", 15, "53495d"],
-        ["BASE08",  1, "a0a0c5"],
-        ["BASE09",  9, "efe4a1"],
-        ["BASE0A",  3, "ae81ff"],
-        ["BASE0B",  2, "6dfedf"],
-        ["BASE0C",  6, "8eaee0"],
-        ["BASE0D",  4, "2de0a7"],
-        ["BASE0E",  5, "7aa5ff"],
-        ["BASE0F", 14, "ff79c6"],
-      ] 
+      @@base00 = 0x292a44
+      @@base01 = 0x663399
+      @@base02 = 0x383a62
+      @@base03 = 0x666699
+      @@base04 = 0xa0a0c5
+      @@base05 = 0xf1eff8
+      @@base06 = 0xccccff
+      @@base07 = 0x53495d
+      @@base08 = 0xa0a0c5
+      @@base09 = 0xefe4a1
+      @@base0A = 0xae81ff
+      @@base0B = 0x6dfedf
+      @@base0C = 0x8eaee0
+      @@base0D = 0x2de0a7
+      @@base0E = 0x7aa5ff
+      @@base0F = 0xff79c6
       super
-      @name = "base16-rebecca"
+      @name = @@theme_name
     end
   end
 end

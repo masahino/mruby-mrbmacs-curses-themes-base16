@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-nord_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-nord.rb", "w") do |f|
 f.puts "# Nord scheme by arcticicestudio"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Nord".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Nord".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "nord".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-nord"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "2e3440"],
-        ["BASE01", 10, "3b4252"],
-        ["BASE02", 11, "434c5e"],
-        ["BASE03",  8, "4c566a"],
-        ["BASE04", 12, "d8dee9"],
-        ["BASE05",  7, "e5e9f0"],
-        ["BASE06", 13, "eceff4"],
-        ["BASE07", 15, "8fbcbb"],
-        ["BASE08",  1, "bf616a"],
-        ["BASE09",  9, "d08770"],
-        ["BASE0A",  3, "ebcb8b"],
-        ["BASE0B",  2, "a3be8c"],
-        ["BASE0C",  6, "88c0d0"],
-        ["BASE0D",  4, "81a1c1"],
-        ["BASE0E",  5, "b48ead"],
-        ["BASE0F", 14, "5e81ac"],
-      ] 
+      @@base00 = 0x2e3440
+      @@base01 = 0x3b4252
+      @@base02 = 0x434c5e
+      @@base03 = 0x4c566a
+      @@base04 = 0xd8dee9
+      @@base05 = 0xe5e9f0
+      @@base06 = 0xeceff4
+      @@base07 = 0x8fbcbb
+      @@base08 = 0xbf616a
+      @@base09 = 0xd08770
+      @@base0A = 0xebcb8b
+      @@base0B = 0xa3be8c
+      @@base0C = 0x88c0d0
+      @@base0D = 0x81a1c1
+      @@base0E = 0xb48ead
+      @@base0F = 0x5e81ac
       super
-      @name = "base16-nord"
+      @name = @@theme_name
     end
   end
 end

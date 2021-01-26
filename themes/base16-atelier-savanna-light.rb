@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-atelier-savanna-light_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-atelier-savanna-light.rb", "w") do |f|
 f.puts "# Atelier Savanna Light scheme by Bram de Haan (http://atelierbramdehaan.nl)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Atelier Savanna Light".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Atelier Savanna Light".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "atelier-savanna-light".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-atelier-savanna-light"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "ecf4ee"],
-        ["BASE01", 10, "dfe7e2"],
-        ["BASE02", 11, "87928a"],
-        ["BASE03",  8, "78877d"],
-        ["BASE04", 12, "5f6d64"],
-        ["BASE05",  7, "526057"],
-        ["BASE06", 13, "232a25"],
-        ["BASE07", 15, "171c19"],
-        ["BASE08",  1, "b16139"],
-        ["BASE09",  9, "9f713c"],
-        ["BASE0A",  3, "a07e3b"],
-        ["BASE0B",  2, "489963"],
-        ["BASE0C",  6, "1c9aa0"],
-        ["BASE0D",  4, "478c90"],
-        ["BASE0E",  5, "55859b"],
-        ["BASE0F", 14, "867469"],
-      ] 
+      @@base00 = 0xecf4ee
+      @@base01 = 0xdfe7e2
+      @@base02 = 0x87928a
+      @@base03 = 0x78877d
+      @@base04 = 0x5f6d64
+      @@base05 = 0x526057
+      @@base06 = 0x232a25
+      @@base07 = 0x171c19
+      @@base08 = 0xb16139
+      @@base09 = 0x9f713c
+      @@base0A = 0xa07e3b
+      @@base0B = 0x489963
+      @@base0C = 0x1c9aa0
+      @@base0D = 0x478c90
+      @@base0E = 0x55859b
+      @@base0F = 0x867469
       super
-      @name = "base16-atelier-savanna-light"
+      @name = @@theme_name
     end
   end
 end

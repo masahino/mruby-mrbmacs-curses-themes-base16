@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-classic-light_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-classic-light.rb", "w") do |f|
 f.puts "# Classic Light scheme by Jason Heeris (http://heeris.id.au)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Classic Light".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Classic Light".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "classic-light".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-classic-light"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "f5f5f5"],
-        ["BASE01", 10, "e0e0e0"],
-        ["BASE02", 11, "d0d0d0"],
-        ["BASE03",  8, "b0b0b0"],
-        ["BASE04", 12, "505050"],
-        ["BASE05",  7, "303030"],
-        ["BASE06", 13, "202020"],
-        ["BASE07", 15, "151515"],
-        ["BASE08",  1, "ac4142"],
-        ["BASE09",  9, "d28445"],
-        ["BASE0A",  3, "f4bf75"],
-        ["BASE0B",  2, "90a959"],
-        ["BASE0C",  6, "75b5aa"],
-        ["BASE0D",  4, "6a9fb5"],
-        ["BASE0E",  5, "aa759f"],
-        ["BASE0F", 14, "8f5536"],
-      ] 
+      @@base00 = 0xf5f5f5
+      @@base01 = 0xe0e0e0
+      @@base02 = 0xd0d0d0
+      @@base03 = 0xb0b0b0
+      @@base04 = 0x505050
+      @@base05 = 0x303030
+      @@base06 = 0x202020
+      @@base07 = 0x151515
+      @@base08 = 0xac4142
+      @@base09 = 0xd28445
+      @@base0A = 0xf4bf75
+      @@base0B = 0x90a959
+      @@base0C = 0x75b5aa
+      @@base0D = 0x6a9fb5
+      @@base0E = 0xaa759f
+      @@base0F = 0x8f5536
       super
-      @name = "base16-classic-light"
+      @name = @@theme_name
     end
   end
 end

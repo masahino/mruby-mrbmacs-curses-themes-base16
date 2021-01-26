@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-material-lighter_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-material-lighter.rb", "w") do |f|
 f.puts "# Material Lighter scheme by Nate Peterson"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Material Lighter".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Material Lighter".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "material-lighter".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-material-lighter"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "fafafa"],
-        ["BASE01", 10, "e7eaec"],
-        ["BASE02", 11, "cceae7"],
-        ["BASE03",  8, "ccd7da"],
-        ["BASE04", 12, "8796b0"],
-        ["BASE05",  7, "80cbc4"],
-        ["BASE06", 13, "80cbc4"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "ff5370"],
-        ["BASE09",  9, "f76d47"],
-        ["BASE0A",  3, "ffb62c"],
-        ["BASE0B",  2, "91b859"],
-        ["BASE0C",  6, "39adb5"],
-        ["BASE0D",  4, "6182b8"],
-        ["BASE0E",  5, "7c4dff"],
-        ["BASE0F", 14, "e53935"],
-      ] 
+      @@base00 = 0xfafafa
+      @@base01 = 0xe7eaec
+      @@base02 = 0xcceae7
+      @@base03 = 0xccd7da
+      @@base04 = 0x8796b0
+      @@base05 = 0x80cbc4
+      @@base06 = 0x80cbc4
+      @@base07 = 0xffffff
+      @@base08 = 0xff5370
+      @@base09 = 0xf76d47
+      @@base0A = 0xffb62c
+      @@base0B = 0x91b859
+      @@base0C = 0x39adb5
+      @@base0D = 0x6182b8
+      @@base0E = 0x7c4dff
+      @@base0F = 0xe53935
       super
-      @name = "base16-material-lighter"
+      @name = @@theme_name
     end
   end
 end

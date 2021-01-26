@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-twilight_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-twilight.rb", "w") do |f|
 f.puts "# Twilight scheme by David Hart (https://github.com/hartbit)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Twilight".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Twilight".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "twilight".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-twilight"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1e1e1e"],
-        ["BASE01", 10, "323537"],
-        ["BASE02", 11, "464b50"],
-        ["BASE03",  8, "5f5a60"],
-        ["BASE04", 12, "838184"],
-        ["BASE05",  7, "a7a7a7"],
-        ["BASE06", 13, "c3c3c3"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "cf6a4c"],
-        ["BASE09",  9, "cda869"],
-        ["BASE0A",  3, "f9ee98"],
-        ["BASE0B",  2, "8f9d6a"],
-        ["BASE0C",  6, "afc4db"],
-        ["BASE0D",  4, "7587a6"],
-        ["BASE0E",  5, "9b859d"],
-        ["BASE0F", 14, "9b703f"],
-      ] 
+      @@base00 = 0x1e1e1e
+      @@base01 = 0x323537
+      @@base02 = 0x464b50
+      @@base03 = 0x5f5a60
+      @@base04 = 0x838184
+      @@base05 = 0xa7a7a7
+      @@base06 = 0xc3c3c3
+      @@base07 = 0xffffff
+      @@base08 = 0xcf6a4c
+      @@base09 = 0xcda869
+      @@base0A = 0xf9ee98
+      @@base0B = 0x8f9d6a
+      @@base0C = 0xafc4db
+      @@base0D = 0x7587a6
+      @@base0E = 0x9b859d
+      @@base0F = 0x9b703f
       super
-      @name = "base16-twilight"
+      @name = @@theme_name
     end
   end
 end

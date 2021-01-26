@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-atelier-plateau_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-atelier-plateau.rb", "w") do |f|
 f.puts "# Atelier Plateau scheme by Bram de Haan (http://atelierbramdehaan.nl)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Atelier Plateau".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Atelier Plateau".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "atelier-plateau".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-atelier-plateau"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1b1818"],
-        ["BASE01", 10, "292424"],
-        ["BASE02", 11, "585050"],
-        ["BASE03",  8, "655d5d"],
-        ["BASE04", 12, "7e7777"],
-        ["BASE05",  7, "8a8585"],
-        ["BASE06", 13, "e7dfdf"],
-        ["BASE07", 15, "f4ecec"],
-        ["BASE08",  1, "ca4949"],
-        ["BASE09",  9, "b45a3c"],
-        ["BASE0A",  3, "a06e3b"],
-        ["BASE0B",  2, "4b8b8b"],
-        ["BASE0C",  6, "5485b6"],
-        ["BASE0D",  4, "7272ca"],
-        ["BASE0E",  5, "8464c4"],
-        ["BASE0F", 14, "bd5187"],
-      ] 
+      @@base00 = 0x1b1818
+      @@base01 = 0x292424
+      @@base02 = 0x585050
+      @@base03 = 0x655d5d
+      @@base04 = 0x7e7777
+      @@base05 = 0x8a8585
+      @@base06 = 0xe7dfdf
+      @@base07 = 0xf4ecec
+      @@base08 = 0xca4949
+      @@base09 = 0xb45a3c
+      @@base0A = 0xa06e3b
+      @@base0B = 0x4b8b8b
+      @@base0C = 0x5485b6
+      @@base0D = 0x7272ca
+      @@base0E = 0x8464c4
+      @@base0F = 0xbd5187
       super
-      @name = "base16-atelier-plateau"
+      @name = @@theme_name
     end
   end
 end

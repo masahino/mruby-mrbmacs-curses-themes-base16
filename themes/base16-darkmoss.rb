@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-darkmoss_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-darkmoss.rb", "w") do |f|
 f.puts "# darkmoss scheme by Gabriel Avanzi (https://github.com/avanzzzi)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "darkmoss".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "darkmoss".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "darkmoss".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-darkmoss"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "171e1f"],
-        ["BASE01", 10, "252c2d"],
-        ["BASE02", 11, "373c3d"],
-        ["BASE03",  8, "555e5f"],
-        ["BASE04", 12, "818f80"],
-        ["BASE05",  7, "c7c7a5"],
-        ["BASE06", 13, "e3e3c8"],
-        ["BASE07", 15, "e1eaef"],
-        ["BASE08",  1, "ff4658"],
-        ["BASE09",  9, "e6db74"],
-        ["BASE0A",  3, "fdb11f"],
-        ["BASE0B",  2, "499180"],
-        ["BASE0C",  6, "66d9ef"],
-        ["BASE0D",  4, "498091"],
-        ["BASE0E",  5, "9bc0c8"],
-        ["BASE0F", 14, "d27b53"],
-      ] 
+      @@base00 = 0x171e1f
+      @@base01 = 0x252c2d
+      @@base02 = 0x373c3d
+      @@base03 = 0x555e5f
+      @@base04 = 0x818f80
+      @@base05 = 0xc7c7a5
+      @@base06 = 0xe3e3c8
+      @@base07 = 0xe1eaef
+      @@base08 = 0xff4658
+      @@base09 = 0xe6db74
+      @@base0A = 0xfdb11f
+      @@base0B = 0x499180
+      @@base0C = 0x66d9ef
+      @@base0D = 0x498091
+      @@base0E = 0x9bc0c8
+      @@base0F = 0xd27b53
       super
-      @name = "base16-darkmoss"
+      @name = @@theme_name
     end
   end
 end

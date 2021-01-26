@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-outrun-dark_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-outrun-dark.rb", "w") do |f|
 f.puts "# Outrun Dark scheme by Hugo Delahousse (http://github.com/hugodelahousse/)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Outrun Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Outrun Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "outrun-dark".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-outrun-dark"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "00002a"],
-        ["BASE01", 10, "20204a"],
-        ["BASE02", 11, "30305a"],
-        ["BASE03",  8, "50507a"],
-        ["BASE04", 12, "b0b0da"],
-        ["BASE05",  7, "d0d0fa"],
-        ["BASE06", 13, "e0e0ff"],
-        ["BASE07", 15, "f5f5ff"],
-        ["BASE08",  1, "ff4242"],
-        ["BASE09",  9, "fc8d28"],
-        ["BASE0A",  3, "f3e877"],
-        ["BASE0B",  2, "59f176"],
-        ["BASE0C",  6, "0ef0f0"],
-        ["BASE0D",  4, "66b0ff"],
-        ["BASE0E",  5, "f10596"],
-        ["BASE0F", 14, "f003ef"],
-      ] 
+      @@base00 = 0x00002a
+      @@base01 = 0x20204a
+      @@base02 = 0x30305a
+      @@base03 = 0x50507a
+      @@base04 = 0xb0b0da
+      @@base05 = 0xd0d0fa
+      @@base06 = 0xe0e0ff
+      @@base07 = 0xf5f5ff
+      @@base08 = 0xff4242
+      @@base09 = 0xfc8d28
+      @@base0A = 0xf3e877
+      @@base0B = 0x59f176
+      @@base0C = 0x0ef0f0
+      @@base0D = 0x66b0ff
+      @@base0E = 0xf10596
+      @@base0F = 0xf003ef
       super
-      @name = "base16-outrun-dark"
+      @name = @@theme_name
     end
   end
 end

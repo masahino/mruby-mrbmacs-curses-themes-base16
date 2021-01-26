@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-atelier-lakeside-light_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-atelier-lakeside-light.rb", "w") do |f|
 f.puts "# Atelier Lakeside Light scheme by Bram de Haan (http://atelierbramdehaan.nl)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Atelier Lakeside Light".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Atelier Lakeside Light".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "atelier-lakeside-light".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-atelier-lakeside-light"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "ebf8ff"],
-        ["BASE01", 10, "c1e4f6"],
-        ["BASE02", 11, "7ea2b4"],
-        ["BASE03",  8, "7195a8"],
-        ["BASE04", 12, "5a7b8c"],
-        ["BASE05",  7, "516d7b"],
-        ["BASE06", 13, "1f292e"],
-        ["BASE07", 15, "161b1d"],
-        ["BASE08",  1, "d22d72"],
-        ["BASE09",  9, "935c25"],
-        ["BASE0A",  3, "8a8a0f"],
-        ["BASE0B",  2, "568c3b"],
-        ["BASE0C",  6, "2d8f6f"],
-        ["BASE0D",  4, "257fad"],
-        ["BASE0E",  5, "6b6bb8"],
-        ["BASE0F", 14, "b72dd2"],
-      ] 
+      @@base00 = 0xebf8ff
+      @@base01 = 0xc1e4f6
+      @@base02 = 0x7ea2b4
+      @@base03 = 0x7195a8
+      @@base04 = 0x5a7b8c
+      @@base05 = 0x516d7b
+      @@base06 = 0x1f292e
+      @@base07 = 0x161b1d
+      @@base08 = 0xd22d72
+      @@base09 = 0x935c25
+      @@base0A = 0x8a8a0f
+      @@base0B = 0x568c3b
+      @@base0C = 0x2d8f6f
+      @@base0D = 0x257fad
+      @@base0E = 0x6b6bb8
+      @@base0F = 0xb72dd2
       super
-      @name = "base16-atelier-lakeside-light"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-brewer_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-brewer.rb", "w") do |f|
 f.puts "# Brewer scheme by Timothée Poisot (http://github.com/tpoisot)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Brewer".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Brewer".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "brewer".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-brewer"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "0c0d0e"],
-        ["BASE01", 10, "2e2f30"],
-        ["BASE02", 11, "515253"],
-        ["BASE03",  8, "737475"],
-        ["BASE04", 12, "959697"],
-        ["BASE05",  7, "b7b8b9"],
-        ["BASE06", 13, "dadbdc"],
-        ["BASE07", 15, "fcfdfe"],
-        ["BASE08",  1, "e31a1c"],
-        ["BASE09",  9, "e6550d"],
-        ["BASE0A",  3, "dca060"],
-        ["BASE0B",  2, "31a354"],
-        ["BASE0C",  6, "80b1d3"],
-        ["BASE0D",  4, "3182bd"],
-        ["BASE0E",  5, "756bb1"],
-        ["BASE0F", 14, "b15928"],
-      ] 
+      @@base00 = 0x0c0d0e
+      @@base01 = 0x2e2f30
+      @@base02 = 0x515253
+      @@base03 = 0x737475
+      @@base04 = 0x959697
+      @@base05 = 0xb7b8b9
+      @@base06 = 0xdadbdc
+      @@base07 = 0xfcfdfe
+      @@base08 = 0xe31a1c
+      @@base09 = 0xe6550d
+      @@base0A = 0xdca060
+      @@base0B = 0x31a354
+      @@base0C = 0x80b1d3
+      @@base0D = 0x3182bd
+      @@base0E = 0x756bb1
+      @@base0F = 0xb15928
       super
-      @name = "base16-brewer"
+      @name = @@theme_name
     end
   end
 end

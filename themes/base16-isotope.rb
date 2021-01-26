@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-isotope_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-isotope.rb", "w") do |f|
 f.puts "# Isotope scheme by Jan T. Sott"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Isotope".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Isotope".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "isotope".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-isotope"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "000000"],
-        ["BASE01", 10, "404040"],
-        ["BASE02", 11, "606060"],
-        ["BASE03",  8, "808080"],
-        ["BASE04", 12, "c0c0c0"],
-        ["BASE05",  7, "d0d0d0"],
-        ["BASE06", 13, "e0e0e0"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "ff0000"],
-        ["BASE09",  9, "ff9900"],
-        ["BASE0A",  3, "ff0099"],
-        ["BASE0B",  2, "33ff00"],
-        ["BASE0C",  6, "00ffff"],
-        ["BASE0D",  4, "0066ff"],
-        ["BASE0E",  5, "cc00ff"],
-        ["BASE0F", 14, "3300ff"],
-      ] 
+      @@base00 = 0x000000
+      @@base01 = 0x404040
+      @@base02 = 0x606060
+      @@base03 = 0x808080
+      @@base04 = 0xc0c0c0
+      @@base05 = 0xd0d0d0
+      @@base06 = 0xe0e0e0
+      @@base07 = 0xffffff
+      @@base08 = 0xff0000
+      @@base09 = 0xff9900
+      @@base0A = 0xff0099
+      @@base0B = 0x33ff00
+      @@base0C = 0x00ffff
+      @@base0D = 0x0066ff
+      @@base0E = 0xcc00ff
+      @@base0F = 0x3300ff
       super
-      @name = "base16-isotope"
+      @name = @@theme_name
     end
   end
 end

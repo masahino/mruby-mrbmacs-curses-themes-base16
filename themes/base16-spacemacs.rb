@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-spacemacs_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-spacemacs.rb", "w") do |f|
 f.puts "# Spacemacs scheme by Nasser Alshammari (https://github.com/nashamri/spacemacs-theme)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Spacemacs".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Spacemacs".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "spacemacs".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-spacemacs"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1f2022"],
-        ["BASE01", 10, "282828"],
-        ["BASE02", 11, "444155"],
-        ["BASE03",  8, "585858"],
-        ["BASE04", 12, "b8b8b8"],
-        ["BASE05",  7, "a3a3a3"],
-        ["BASE06", 13, "e8e8e8"],
-        ["BASE07", 15, "f8f8f8"],
-        ["BASE08",  1, "f2241f"],
-        ["BASE09",  9, "ffa500"],
-        ["BASE0A",  3, "b1951d"],
-        ["BASE0B",  2, "67b11d"],
-        ["BASE0C",  6, "2d9574"],
-        ["BASE0D",  4, "4f97d7"],
-        ["BASE0E",  5, "a31db1"],
-        ["BASE0F", 14, "b03060"],
-      ] 
+      @@base00 = 0x1f2022
+      @@base01 = 0x282828
+      @@base02 = 0x444155
+      @@base03 = 0x585858
+      @@base04 = 0xb8b8b8
+      @@base05 = 0xa3a3a3
+      @@base06 = 0xe8e8e8
+      @@base07 = 0xf8f8f8
+      @@base08 = 0xf2241f
+      @@base09 = 0xffa500
+      @@base0A = 0xb1951d
+      @@base0B = 0x67b11d
+      @@base0C = 0x2d9574
+      @@base0D = 0x4f97d7
+      @@base0E = 0xa31db1
+      @@base0F = 0xb03060
       super
-      @name = "base16-spacemacs"
+      @name = @@theme_name
     end
   end
 end

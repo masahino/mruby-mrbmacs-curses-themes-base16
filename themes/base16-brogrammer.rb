@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-brogrammer_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-brogrammer.rb", "w") do |f|
 f.puts "# Brogrammer scheme by Vik Ramanujam (http://github.com/piggyslasher)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Brogrammer".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Brogrammer".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "brogrammer".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-brogrammer"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1f1f1f"],
-        ["BASE01", 10, "f81118"],
-        ["BASE02", 11, "2dc55e"],
-        ["BASE03",  8, "ecba0f"],
-        ["BASE04", 12, "2a84d2"],
-        ["BASE05",  7, "4e5ab7"],
-        ["BASE06", 13, "1081d6"],
-        ["BASE07", 15, "d6dbe5"],
-        ["BASE08",  1, "d6dbe5"],
-        ["BASE09",  9, "de352e"],
-        ["BASE0A",  3, "1dd361"],
-        ["BASE0B",  2, "f3bd09"],
-        ["BASE0C",  6, "1081d6"],
-        ["BASE0D",  4, "5350b9"],
-        ["BASE0E",  5, "0f7ddb"],
-        ["BASE0F", 14, "ffffff"],
-      ] 
+      @@base00 = 0x1f1f1f
+      @@base01 = 0xf81118
+      @@base02 = 0x2dc55e
+      @@base03 = 0xecba0f
+      @@base04 = 0x2a84d2
+      @@base05 = 0x4e5ab7
+      @@base06 = 0x1081d6
+      @@base07 = 0xd6dbe5
+      @@base08 = 0xd6dbe5
+      @@base09 = 0xde352e
+      @@base0A = 0x1dd361
+      @@base0B = 0xf3bd09
+      @@base0C = 0x1081d6
+      @@base0D = 0x5350b9
+      @@base0E = 0x0f7ddb
+      @@base0F = 0xffffff
       super
-      @name = "base16-brogrammer"
+      @name = @@theme_name
     end
   end
 end

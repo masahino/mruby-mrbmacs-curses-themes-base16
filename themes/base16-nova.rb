@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-nova_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-nova.rb", "w") do |f|
 f.puts "# Nova scheme by George Essig (https://github.com/gessig), Trevor D. Miller (https://trevordmiller.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Nova".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Nova".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "nova".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-nova"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "3c4c55"],
-        ["BASE01", 10, "556873"],
-        ["BASE02", 11, "6a7d89"],
-        ["BASE03",  8, "899ba6"],
-        ["BASE04", 12, "899ba6"],
-        ["BASE05",  7, "c5d4dd"],
-        ["BASE06", 13, "899ba6"],
-        ["BASE07", 15, "556873"],
-        ["BASE08",  1, "83afe5"],
-        ["BASE09",  9, "7fc1ca"],
-        ["BASE0A",  3, "a8ce93"],
-        ["BASE0B",  2, "7fc1ca"],
-        ["BASE0C",  6, "f2c38f"],
-        ["BASE0D",  4, "83afe5"],
-        ["BASE0E",  5, "9a93e1"],
-        ["BASE0F", 14, "f2c38f"],
-      ] 
+      @@base00 = 0x3c4c55
+      @@base01 = 0x556873
+      @@base02 = 0x6a7d89
+      @@base03 = 0x899ba6
+      @@base04 = 0x899ba6
+      @@base05 = 0xc5d4dd
+      @@base06 = 0x899ba6
+      @@base07 = 0x556873
+      @@base08 = 0x83afe5
+      @@base09 = 0x7fc1ca
+      @@base0A = 0xa8ce93
+      @@base0B = 0x7fc1ca
+      @@base0C = 0xf2c38f
+      @@base0D = 0x83afe5
+      @@base0E = 0x9a93e1
+      @@base0F = 0xf2c38f
       super
-      @name = "base16-nova"
+      @name = @@theme_name
     end
   end
 end

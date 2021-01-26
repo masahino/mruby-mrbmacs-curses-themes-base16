@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-fruit-soda_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-fruit-soda.rb", "w") do |f|
 f.puts "# Fruit Soda scheme by jozip"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Fruit Soda".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Fruit Soda".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "fruit-soda".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-fruit-soda"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "f1ecf1"],
-        ["BASE01", 10, "e0dee0"],
-        ["BASE02", 11, "d8d5d5"],
-        ["BASE03",  8, "b5b4b6"],
-        ["BASE04", 12, "979598"],
-        ["BASE05",  7, "515151"],
-        ["BASE06", 13, "474545"],
-        ["BASE07", 15, "2d2c2c"],
-        ["BASE08",  1, "fe3e31"],
-        ["BASE09",  9, "fe6d08"],
-        ["BASE0A",  3, "f7e203"],
-        ["BASE0B",  2, "47f74c"],
-        ["BASE0C",  6, "0f9cfd"],
-        ["BASE0D",  4, "2931df"],
-        ["BASE0E",  5, "611fce"],
-        ["BASE0F", 14, "b16f40"],
-      ] 
+      @@base00 = 0xf1ecf1
+      @@base01 = 0xe0dee0
+      @@base02 = 0xd8d5d5
+      @@base03 = 0xb5b4b6
+      @@base04 = 0x979598
+      @@base05 = 0x515151
+      @@base06 = 0x474545
+      @@base07 = 0x2d2c2c
+      @@base08 = 0xfe3e31
+      @@base09 = 0xfe6d08
+      @@base0A = 0xf7e203
+      @@base0B = 0x47f74c
+      @@base0C = 0x0f9cfd
+      @@base0D = 0x2931df
+      @@base0E = 0x611fce
+      @@base0F = 0xb16f40
       super
-      @name = "base16-fruit-soda"
+      @name = @@theme_name
     end
   end
 end

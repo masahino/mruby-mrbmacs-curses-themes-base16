@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-solarized-light_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-solarized-light.rb", "w") do |f|
 f.puts "# Solarized Light scheme by Ethan Schoonover (modified by aramisgithub)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Solarized Light".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Solarized Light".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "solarized-light".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-solarized-light"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "fdf6e3"],
-        ["BASE01", 10, "eee8d5"],
-        ["BASE02", 11, "93a1a1"],
-        ["BASE03",  8, "839496"],
-        ["BASE04", 12, "657b83"],
-        ["BASE05",  7, "586e75"],
-        ["BASE06", 13, "073642"],
-        ["BASE07", 15, "002b36"],
-        ["BASE08",  1, "dc322f"],
-        ["BASE09",  9, "cb4b16"],
-        ["BASE0A",  3, "b58900"],
-        ["BASE0B",  2, "859900"],
-        ["BASE0C",  6, "2aa198"],
-        ["BASE0D",  4, "268bd2"],
-        ["BASE0E",  5, "6c71c4"],
-        ["BASE0F", 14, "d33682"],
-      ] 
+      @@base00 = 0xfdf6e3
+      @@base01 = 0xeee8d5
+      @@base02 = 0x93a1a1
+      @@base03 = 0x839496
+      @@base04 = 0x657b83
+      @@base05 = 0x586e75
+      @@base06 = 0x073642
+      @@base07 = 0x002b36
+      @@base08 = 0xdc322f
+      @@base09 = 0xcb4b16
+      @@base0A = 0xb58900
+      @@base0B = 0x859900
+      @@base0C = 0x2aa198
+      @@base0D = 0x268bd2
+      @@base0E = 0x6c71c4
+      @@base0F = 0xd33682
       super
-      @name = "base16-solarized-light"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-vulcan_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-vulcan.rb", "w") do |f|
 f.puts "# vulcan scheme by Andrey Varfolomeev"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "vulcan".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "vulcan".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "vulcan".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-vulcan"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "041523"],
-        ["BASE01", 10, "122339"],
-        ["BASE02", 11, "003552"],
-        ["BASE03",  8, "7a5759"],
-        ["BASE04", 12, "6b6977"],
-        ["BASE05",  7, "5b778c"],
-        ["BASE06", 13, "333238"],
-        ["BASE07", 15, "214d68"],
-        ["BASE08",  1, "818591"],
-        ["BASE09",  9, "9198a3"],
-        ["BASE0A",  3, "adb4b9"],
-        ["BASE0B",  2, "977d7c"],
-        ["BASE0C",  6, "977d7c"],
-        ["BASE0D",  4, "977d7c"],
-        ["BASE0E",  5, "9198a3"],
-        ["BASE0F", 14, "977d7c"],
-      ] 
+      @@base00 = 0x041523
+      @@base01 = 0x122339
+      @@base02 = 0x003552
+      @@base03 = 0x7a5759
+      @@base04 = 0x6b6977
+      @@base05 = 0x5b778c
+      @@base06 = 0x333238
+      @@base07 = 0x214d68
+      @@base08 = 0x818591
+      @@base09 = 0x9198a3
+      @@base0A = 0xadb4b9
+      @@base0B = 0x977d7c
+      @@base0C = 0x977d7c
+      @@base0D = 0x977d7c
+      @@base0E = 0x9198a3
+      @@base0F = 0x977d7c
       super
-      @name = "base16-vulcan"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-atelier-heath_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-atelier-heath.rb", "w") do |f|
 f.puts "# Atelier Heath scheme by Bram de Haan (http://atelierbramdehaan.nl)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Atelier Heath".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Atelier Heath".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "atelier-heath".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-atelier-heath"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1b181b"],
-        ["BASE01", 10, "292329"],
-        ["BASE02", 11, "695d69"],
-        ["BASE03",  8, "776977"],
-        ["BASE04", 12, "9e8f9e"],
-        ["BASE05",  7, "ab9bab"],
-        ["BASE06", 13, "d8cad8"],
-        ["BASE07", 15, "f7f3f7"],
-        ["BASE08",  1, "ca402b"],
-        ["BASE09",  9, "a65926"],
-        ["BASE0A",  3, "bb8a35"],
-        ["BASE0B",  2, "918b3b"],
-        ["BASE0C",  6, "159393"],
-        ["BASE0D",  4, "516aec"],
-        ["BASE0E",  5, "7b59c0"],
-        ["BASE0F", 14, "cc33cc"],
-      ] 
+      @@base00 = 0x1b181b
+      @@base01 = 0x292329
+      @@base02 = 0x695d69
+      @@base03 = 0x776977
+      @@base04 = 0x9e8f9e
+      @@base05 = 0xab9bab
+      @@base06 = 0xd8cad8
+      @@base07 = 0xf7f3f7
+      @@base08 = 0xca402b
+      @@base09 = 0xa65926
+      @@base0A = 0xbb8a35
+      @@base0B = 0x918b3b
+      @@base0C = 0x159393
+      @@base0D = 0x516aec
+      @@base0E = 0x7b59c0
+      @@base0F = 0xcc33cc
       super
-      @name = "base16-atelier-heath"
+      @name = @@theme_name
     end
   end
 end

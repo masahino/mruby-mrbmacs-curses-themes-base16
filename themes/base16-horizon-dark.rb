@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-horizon-dark_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-horizon-dark.rb", "w") do |f|
 f.puts "# Horizon Dark scheme by Michaël Ball (http://github.com/michael-ball/)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Horizon Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Horizon Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "horizon-dark".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-horizon-dark"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1c1e26"],
-        ["BASE01", 10, "232530"],
-        ["BASE02", 11, "2e303e"],
-        ["BASE03",  8, "6f6f70"],
-        ["BASE04", 12, "9da0a2"],
-        ["BASE05",  7, "cbced0"],
-        ["BASE06", 13, "dcdfe4"],
-        ["BASE07", 15, "e3e6ee"],
-        ["BASE08",  1, "e93c58"],
-        ["BASE09",  9, "e58d7d"],
-        ["BASE0A",  3, "efb993"],
-        ["BASE0B",  2, "efaf8e"],
-        ["BASE0C",  6, "24a8b4"],
-        ["BASE0D",  4, "df5273"],
-        ["BASE0E",  5, "b072d1"],
-        ["BASE0F", 14, "e4a382"],
-      ] 
+      @@base00 = 0x1c1e26
+      @@base01 = 0x232530
+      @@base02 = 0x2e303e
+      @@base03 = 0x6f6f70
+      @@base04 = 0x9da0a2
+      @@base05 = 0xcbced0
+      @@base06 = 0xdcdfe4
+      @@base07 = 0xe3e6ee
+      @@base08 = 0xe93c58
+      @@base09 = 0xe58d7d
+      @@base0A = 0xefb993
+      @@base0B = 0xefaf8e
+      @@base0C = 0x24a8b4
+      @@base0D = 0xdf5273
+      @@base0E = 0xb072d1
+      @@base0F = 0xe4a382
       super
-      @name = "base16-horizon-dark"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-darkviolet_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-darkviolet.rb", "w") do |f|
 f.puts "# Dark Violet scheme by ruler501 (https://github.com/ruler501/base16-darkviolet)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Dark Violet".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Dark Violet".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "darkviolet".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-darkviolet"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "000000"],
-        ["BASE01", 10, "231a40"],
-        ["BASE02", 11, "432d59"],
-        ["BASE03",  8, "593380"],
-        ["BASE04", 12, "00ff00"],
-        ["BASE05",  7, "b08ae6"],
-        ["BASE06", 13, "9045e6"],
-        ["BASE07", 15, "a366ff"],
-        ["BASE08",  1, "a82ee6"],
-        ["BASE09",  9, "bb66cc"],
-        ["BASE0A",  3, "f29df2"],
-        ["BASE0B",  2, "4595e6"],
-        ["BASE0C",  6, "40dfff"],
-        ["BASE0D",  4, "4136d9"],
-        ["BASE0E",  5, "7e5ce6"],
-        ["BASE0F", 14, "a886bf"],
-      ] 
+      @@base00 = 0x000000
+      @@base01 = 0x231a40
+      @@base02 = 0x432d59
+      @@base03 = 0x593380
+      @@base04 = 0x00ff00
+      @@base05 = 0xb08ae6
+      @@base06 = 0x9045e6
+      @@base07 = 0xa366ff
+      @@base08 = 0xa82ee6
+      @@base09 = 0xbb66cc
+      @@base0A = 0xf29df2
+      @@base0B = 0x4595e6
+      @@base0C = 0x40dfff
+      @@base0D = 0x4136d9
+      @@base0E = 0x7e5ce6
+      @@base0F = 0xa886bf
       super
-      @name = "base16-darkviolet"
+      @name = @@theme_name
     end
   end
 end

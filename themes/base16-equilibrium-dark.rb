@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-equilibrium-dark_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-equilibrium-dark.rb", "w") do |f|
 f.puts "# Equilibrium Dark scheme by Carlo Abelli"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Equilibrium Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Equilibrium Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "equilibrium-dark".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-equilibrium-dark"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "0c1118"],
-        ["BASE01", 10, "181c22"],
-        ["BASE02", 11, "22262d"],
-        ["BASE03",  8, "7b776e"],
-        ["BASE04", 12, "949088"],
-        ["BASE05",  7, "afaba2"],
-        ["BASE06", 13, "cac6bd"],
-        ["BASE07", 15, "e7e2d9"],
-        ["BASE08",  1, "f04339"],
-        ["BASE09",  9, "df5923"],
-        ["BASE0A",  3, "bb8801"],
-        ["BASE0B",  2, "7f8b00"],
-        ["BASE0C",  6, "00948b"],
-        ["BASE0D",  4, "008dd1"],
-        ["BASE0E",  5, "6a7fd2"],
-        ["BASE0F", 14, "e3488e"],
-      ] 
+      @@base00 = 0x0c1118
+      @@base01 = 0x181c22
+      @@base02 = 0x22262d
+      @@base03 = 0x7b776e
+      @@base04 = 0x949088
+      @@base05 = 0xafaba2
+      @@base06 = 0xcac6bd
+      @@base07 = 0xe7e2d9
+      @@base08 = 0xf04339
+      @@base09 = 0xdf5923
+      @@base0A = 0xbb8801
+      @@base0B = 0x7f8b00
+      @@base0C = 0x00948b
+      @@base0D = 0x008dd1
+      @@base0E = 0x6a7fd2
+      @@base0F = 0xe3488e
       super
-      @name = "base16-equilibrium-dark"
+      @name = @@theme_name
     end
   end
 end

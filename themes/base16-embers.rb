@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-embers_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-embers.rb", "w") do |f|
 f.puts "# Embers scheme by Jannik Siebert (https://github.com/janniks)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Embers".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Embers".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "embers".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-embers"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "16130f"],
-        ["BASE01", 10, "2c2620"],
-        ["BASE02", 11, "433b32"],
-        ["BASE03",  8, "5a5047"],
-        ["BASE04", 12, "8a8075"],
-        ["BASE05",  7, "a39a90"],
-        ["BASE06", 13, "beb6ae"],
-        ["BASE07", 15, "dbd6d1"],
-        ["BASE08",  1, "826d57"],
-        ["BASE09",  9, "828257"],
-        ["BASE0A",  3, "6d8257"],
-        ["BASE0B",  2, "57826d"],
-        ["BASE0C",  6, "576d82"],
-        ["BASE0D",  4, "6d5782"],
-        ["BASE0E",  5, "82576d"],
-        ["BASE0F", 14, "825757"],
-      ] 
+      @@base00 = 0x16130f
+      @@base01 = 0x2c2620
+      @@base02 = 0x433b32
+      @@base03 = 0x5a5047
+      @@base04 = 0x8a8075
+      @@base05 = 0xa39a90
+      @@base06 = 0xbeb6ae
+      @@base07 = 0xdbd6d1
+      @@base08 = 0x826d57
+      @@base09 = 0x828257
+      @@base0A = 0x6d8257
+      @@base0B = 0x57826d
+      @@base0C = 0x576d82
+      @@base0D = 0x6d5782
+      @@base0E = 0x82576d
+      @@base0F = 0x825757
       super
-      @name = "base16-embers"
+      @name = @@theme_name
     end
   end
 end

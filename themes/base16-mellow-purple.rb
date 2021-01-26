@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-mellow-purple_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-mellow-purple.rb", "w") do |f|
 f.puts "# Mellow Purple scheme by gidsi"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Mellow Purple".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Mellow Purple".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "mellow-purple".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-mellow-purple"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1e0528"],
-        ["BASE01", 10, "1a092d"],
-        ["BASE02", 11, "331354"],
-        ["BASE03",  8, "320f55"],
-        ["BASE04", 12, "873582"],
-        ["BASE05",  7, "ffeeff"],
-        ["BASE06", 13, "ffeeff"],
-        ["BASE07", 15, "f8c0ff"],
-        ["BASE08",  1, "00d9e9"],
-        ["BASE09",  9, "aa00a3"],
-        ["BASE0A",  3, "955ae7"],
-        ["BASE0B",  2, "05cb0d"],
-        ["BASE0C",  6, "b900b1"],
-        ["BASE0D",  4, "550068"],
-        ["BASE0E",  5, "8991bb"],
-        ["BASE0F", 14, "4d6fff"],
-      ] 
+      @@base00 = 0x1e0528
+      @@base01 = 0x1a092d
+      @@base02 = 0x331354
+      @@base03 = 0x320f55
+      @@base04 = 0x873582
+      @@base05 = 0xffeeff
+      @@base06 = 0xffeeff
+      @@base07 = 0xf8c0ff
+      @@base08 = 0x00d9e9
+      @@base09 = 0xaa00a3
+      @@base0A = 0x955ae7
+      @@base0B = 0x05cb0d
+      @@base0C = 0xb900b1
+      @@base0D = 0x550068
+      @@base0E = 0x8991bb
+      @@base0F = 0x4d6fff
       super
-      @name = "base16-mellow-purple"
+      @name = @@theme_name
     end
   end
 end

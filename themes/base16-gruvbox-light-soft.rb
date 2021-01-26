@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-gruvbox-light-soft_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-gruvbox-light-soft.rb", "w") do |f|
 f.puts "# Gruvbox light, soft scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Gruvbox light, soft".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Gruvbox light, soft".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "gruvbox-light-soft".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-gruvbox-light-soft"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "f2e5bc"],
-        ["BASE01", 10, "ebdbb2"],
-        ["BASE02", 11, "d5c4a1"],
-        ["BASE03",  8, "bdae93"],
-        ["BASE04", 12, "665c54"],
-        ["BASE05",  7, "504945"],
-        ["BASE06", 13, "3c3836"],
-        ["BASE07", 15, "282828"],
-        ["BASE08",  1, "9d0006"],
-        ["BASE09",  9, "af3a03"],
-        ["BASE0A",  3, "b57614"],
-        ["BASE0B",  2, "79740e"],
-        ["BASE0C",  6, "427b58"],
-        ["BASE0D",  4, "076678"],
-        ["BASE0E",  5, "8f3f71"],
-        ["BASE0F", 14, "d65d0e"],
-      ] 
+      @@base00 = 0xf2e5bc
+      @@base01 = 0xebdbb2
+      @@base02 = 0xd5c4a1
+      @@base03 = 0xbdae93
+      @@base04 = 0x665c54
+      @@base05 = 0x504945
+      @@base06 = 0x3c3836
+      @@base07 = 0x282828
+      @@base08 = 0x9d0006
+      @@base09 = 0xaf3a03
+      @@base0A = 0xb57614
+      @@base0B = 0x79740e
+      @@base0C = 0x427b58
+      @@base0D = 0x076678
+      @@base0E = 0x8f3f71
+      @@base0F = 0xd65d0e
       super
-      @name = "base16-gruvbox-light-soft"
+      @name = @@theme_name
     end
   end
 end

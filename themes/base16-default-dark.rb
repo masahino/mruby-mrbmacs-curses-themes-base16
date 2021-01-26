@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-default-dark_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-default-dark.rb", "w") do |f|
 f.puts "# Default Dark scheme by Chris Kempson (http://chriskempson.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Default Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Default Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "default-dark".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-default-dark"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "181818"],
-        ["BASE01", 10, "282828"],
-        ["BASE02", 11, "383838"],
-        ["BASE03",  8, "585858"],
-        ["BASE04", 12, "b8b8b8"],
-        ["BASE05",  7, "d8d8d8"],
-        ["BASE06", 13, "e8e8e8"],
-        ["BASE07", 15, "f8f8f8"],
-        ["BASE08",  1, "ab4642"],
-        ["BASE09",  9, "dc9656"],
-        ["BASE0A",  3, "f7ca88"],
-        ["BASE0B",  2, "a1b56c"],
-        ["BASE0C",  6, "86c1b9"],
-        ["BASE0D",  4, "7cafc2"],
-        ["BASE0E",  5, "ba8baf"],
-        ["BASE0F", 14, "a16946"],
-      ] 
+      @@base00 = 0x181818
+      @@base01 = 0x282828
+      @@base02 = 0x383838
+      @@base03 = 0x585858
+      @@base04 = 0xb8b8b8
+      @@base05 = 0xd8d8d8
+      @@base06 = 0xe8e8e8
+      @@base07 = 0xf8f8f8
+      @@base08 = 0xab4642
+      @@base09 = 0xdc9656
+      @@base0A = 0xf7ca88
+      @@base0B = 0xa1b56c
+      @@base0C = 0x86c1b9
+      @@base0D = 0x7cafc2
+      @@base0E = 0xba8baf
+      @@base0F = 0xa16946
       super
-      @name = "base16-default-dark"
+      @name = @@theme_name
     end
   end
 end

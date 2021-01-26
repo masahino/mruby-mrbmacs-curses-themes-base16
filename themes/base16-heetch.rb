@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-heetch_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-heetch.rb", "w") do |f|
 f.puts "# Heetch Dark scheme by Geoffrey Teale (tealeg@gmail.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Heetch Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Heetch Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "heetch".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-heetch"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "190134"],
-        ["BASE01", 10, "392551"],
-        ["BASE02", 11, "5a496e"],
-        ["BASE03",  8, "7b6d8b"],
-        ["BASE04", 12, "9c92a8"],
-        ["BASE05",  7, "bdb6c5"],
-        ["BASE06", 13, "dedae2"],
-        ["BASE07", 15, "feffff"],
-        ["BASE08",  1, "27d9d5"],
-        ["BASE09",  9, "5ba2b6"],
-        ["BASE0A",  3, "8f6c97"],
-        ["BASE0B",  2, "c33678"],
-        ["BASE0C",  6, "f80059"],
-        ["BASE0D",  4, "bd0152"],
-        ["BASE0E",  5, "82034c"],
-        ["BASE0F", 14, "470546"],
-      ] 
+      @@base00 = 0x190134
+      @@base01 = 0x392551
+      @@base02 = 0x5a496e
+      @@base03 = 0x7b6d8b
+      @@base04 = 0x9c92a8
+      @@base05 = 0xbdb6c5
+      @@base06 = 0xdedae2
+      @@base07 = 0xfeffff
+      @@base08 = 0x27d9d5
+      @@base09 = 0x5ba2b6
+      @@base0A = 0x8f6c97
+      @@base0B = 0xc33678
+      @@base0C = 0xf80059
+      @@base0D = 0xbd0152
+      @@base0E = 0x82034c
+      @@base0F = 0x470546
       super
-      @name = "base16-heetch"
+      @name = @@theme_name
     end
   end
 end

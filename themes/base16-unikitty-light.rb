@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-unikitty-light_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-unikitty-light.rb", "w") do |f|
 f.puts "# Unikitty Light scheme by Josh W Lewis (@joshwlewis)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Unikitty Light".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Unikitty Light".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "unikitty-light".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-unikitty-light"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "ffffff"],
-        ["BASE01", 10, "e1e1e2"],
-        ["BASE02", 11, "c4c3c5"],
-        ["BASE03",  8, "a7a5a8"],
-        ["BASE04", 12, "89878b"],
-        ["BASE05",  7, "6c696e"],
-        ["BASE06", 13, "4f4b51"],
-        ["BASE07", 15, "322d34"],
-        ["BASE08",  1, "d8137f"],
-        ["BASE09",  9, "d65407"],
-        ["BASE0A",  3, "dc8a0e"],
-        ["BASE0B",  2, "17ad98"],
-        ["BASE0C",  6, "149bda"],
-        ["BASE0D",  4, "775dff"],
-        ["BASE0E",  5, "aa17e6"],
-        ["BASE0F", 14, "e013d0"],
-      ] 
+      @@base00 = 0xffffff
+      @@base01 = 0xe1e1e2
+      @@base02 = 0xc4c3c5
+      @@base03 = 0xa7a5a8
+      @@base04 = 0x89878b
+      @@base05 = 0x6c696e
+      @@base06 = 0x4f4b51
+      @@base07 = 0x322d34
+      @@base08 = 0xd8137f
+      @@base09 = 0xd65407
+      @@base0A = 0xdc8a0e
+      @@base0B = 0x17ad98
+      @@base0C = 0x149bda
+      @@base0D = 0x775dff
+      @@base0E = 0xaa17e6
+      @@base0F = 0xe013d0
       super
-      @name = "base16-unikitty-light"
+      @name = @@theme_name
     end
   end
 end

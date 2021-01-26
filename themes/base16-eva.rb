@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-eva_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-eva.rb", "w") do |f|
 f.puts "# Eva scheme by kjakapat (https://github.com/kjakapat)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Eva".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Eva".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "eva".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-eva"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "2a3b4d"],
-        ["BASE01", 10, "3d566f"],
-        ["BASE02", 11, "4b6988"],
-        ["BASE03",  8, "55799c"],
-        ["BASE04", 12, "7e90a3"],
-        ["BASE05",  7, "9fa2a6"],
-        ["BASE06", 13, "d6d7d9"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "c4676c"],
-        ["BASE09",  9, "ff9966"],
-        ["BASE0A",  3, "ffff66"],
-        ["BASE0B",  2, "66ff66"],
-        ["BASE0C",  6, "4b8f77"],
-        ["BASE0D",  4, "15f4ee"],
-        ["BASE0E",  5, "9c6cd3"],
-        ["BASE0F", 14, "bb64a9"],
-      ] 
+      @@base00 = 0x2a3b4d
+      @@base01 = 0x3d566f
+      @@base02 = 0x4b6988
+      @@base03 = 0x55799c
+      @@base04 = 0x7e90a3
+      @@base05 = 0x9fa2a6
+      @@base06 = 0xd6d7d9
+      @@base07 = 0xffffff
+      @@base08 = 0xc4676c
+      @@base09 = 0xff9966
+      @@base0A = 0xffff66
+      @@base0B = 0x66ff66
+      @@base0C = 0x4b8f77
+      @@base0D = 0x15f4ee
+      @@base0E = 0x9c6cd3
+      @@base0F = 0xbb64a9
       super
-      @name = "base16-eva"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-bright_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-bright.rb", "w") do |f|
 f.puts "# Bright scheme by Chris Kempson (http://chriskempson.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Bright".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Bright".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "bright".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-bright"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "000000"],
-        ["BASE01", 10, "303030"],
-        ["BASE02", 11, "505050"],
-        ["BASE03",  8, "b0b0b0"],
-        ["BASE04", 12, "d0d0d0"],
-        ["BASE05",  7, "e0e0e0"],
-        ["BASE06", 13, "f5f5f5"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "fb0120"],
-        ["BASE09",  9, "fc6d24"],
-        ["BASE0A",  3, "fda331"],
-        ["BASE0B",  2, "a1c659"],
-        ["BASE0C",  6, "76c7b7"],
-        ["BASE0D",  4, "6fb3d2"],
-        ["BASE0E",  5, "d381c3"],
-        ["BASE0F", 14, "be643c"],
-      ] 
+      @@base00 = 0x000000
+      @@base01 = 0x303030
+      @@base02 = 0x505050
+      @@base03 = 0xb0b0b0
+      @@base04 = 0xd0d0d0
+      @@base05 = 0xe0e0e0
+      @@base06 = 0xf5f5f5
+      @@base07 = 0xffffff
+      @@base08 = 0xfb0120
+      @@base09 = 0xfc6d24
+      @@base0A = 0xfda331
+      @@base0B = 0xa1c659
+      @@base0C = 0x76c7b7
+      @@base0D = 0x6fb3d2
+      @@base0E = 0xd381c3
+      @@base0F = 0xbe643c
       super
-      @name = "base16-bright"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-black-metal-nile_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-black-metal-nile.rb", "w") do |f|
 f.puts "# Black Metal (Nile) scheme by metalelf0 (https://github.com/metalelf0)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Black Metal (Nile)".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Black Metal (Nile)".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "black-metal-nile".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-black-metal-nile"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "000000"],
-        ["BASE01", 10, "121212"],
-        ["BASE02", 11, "222222"],
-        ["BASE03",  8, "333333"],
-        ["BASE04", 12, "999999"],
-        ["BASE05",  7, "c1c1c1"],
-        ["BASE06", 13, "999999"],
-        ["BASE07", 15, "c1c1c1"],
-        ["BASE08",  1, "5f8787"],
-        ["BASE09",  9, "aaaaaa"],
-        ["BASE0A",  3, "777755"],
-        ["BASE0B",  2, "aa9988"],
-        ["BASE0C",  6, "aaaaaa"],
-        ["BASE0D",  4, "888888"],
-        ["BASE0E",  5, "999999"],
-        ["BASE0F", 14, "444444"],
-      ] 
+      @@base00 = 0x000000
+      @@base01 = 0x121212
+      @@base02 = 0x222222
+      @@base03 = 0x333333
+      @@base04 = 0x999999
+      @@base05 = 0xc1c1c1
+      @@base06 = 0x999999
+      @@base07 = 0xc1c1c1
+      @@base08 = 0x5f8787
+      @@base09 = 0xaaaaaa
+      @@base0A = 0x777755
+      @@base0B = 0xaa9988
+      @@base0C = 0xaaaaaa
+      @@base0D = 0x888888
+      @@base0E = 0x999999
+      @@base0F = 0x444444
       super
-      @name = "base16-black-metal-nile"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-silk-light_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-silk-light.rb", "w") do |f|
 f.puts "# Silk Light scheme by Gabriel Fontes (https://github.com/Misterio77)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Silk Light".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Silk Light".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "silk-light".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-silk-light"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "e9f1ef"],
-        ["BASE01", 10, "ccd4d3"],
-        ["BASE02", 11, "90b7b6"],
-        ["BASE03",  8, "5c787b"],
-        ["BASE04", 12, "4b5b5f"],
-        ["BASE05",  7, "385156"],
-        ["BASE06", 13, "0e3c46"],
-        ["BASE07", 15, "d2faff"],
-        ["BASE08",  1, "cf432e"],
-        ["BASE09",  9, "d27f46"],
-        ["BASE0A",  3, "cfad25"],
-        ["BASE0B",  2, "6ca38c"],
-        ["BASE0C",  6, "329ca2"],
-        ["BASE0D",  4, "39aac9"],
-        ["BASE0E",  5, "6e6582"],
-        ["BASE0F", 14, "865369"],
-      ] 
+      @@base00 = 0xe9f1ef
+      @@base01 = 0xccd4d3
+      @@base02 = 0x90b7b6
+      @@base03 = 0x5c787b
+      @@base04 = 0x4b5b5f
+      @@base05 = 0x385156
+      @@base06 = 0x0e3c46
+      @@base07 = 0xd2faff
+      @@base08 = 0xcf432e
+      @@base09 = 0xd27f46
+      @@base0A = 0xcfad25
+      @@base0B = 0x6ca38c
+      @@base0C = 0x329ca2
+      @@base0D = 0x39aac9
+      @@base0E = 0x6e6582
+      @@base0F = 0x865369
       super
-      @name = "base16-silk-light"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-solarflare_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-solarflare.rb", "w") do |f|
 f.puts "# Solar Flare scheme by Chuck Harmston (https://chuck.harmston.ch)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Solar Flare".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Solar Flare".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "solarflare".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-solarflare"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "18262f"],
-        ["BASE01", 10, "222e38"],
-        ["BASE02", 11, "586875"],
-        ["BASE03",  8, "667581"],
-        ["BASE04", 12, "85939e"],
-        ["BASE05",  7, "a6afb8"],
-        ["BASE06", 13, "e8e9ed"],
-        ["BASE07", 15, "f5f7fa"],
-        ["BASE08",  1, "ef5253"],
-        ["BASE09",  9, "e66b2b"],
-        ["BASE0A",  3, "e4b51c"],
-        ["BASE0B",  2, "7cc844"],
-        ["BASE0C",  6, "52cbb0"],
-        ["BASE0D",  4, "33b5e1"],
-        ["BASE0E",  5, "a363d5"],
-        ["BASE0F", 14, "d73c9a"],
-      ] 
+      @@base00 = 0x18262f
+      @@base01 = 0x222e38
+      @@base02 = 0x586875
+      @@base03 = 0x667581
+      @@base04 = 0x85939e
+      @@base05 = 0xa6afb8
+      @@base06 = 0xe8e9ed
+      @@base07 = 0xf5f7fa
+      @@base08 = 0xef5253
+      @@base09 = 0xe66b2b
+      @@base0A = 0xe4b51c
+      @@base0B = 0x7cc844
+      @@base0C = 0x52cbb0
+      @@base0D = 0x33b5e1
+      @@base0E = 0xa363d5
+      @@base0F = 0xd73c9a
       super
-      @name = "base16-solarflare"
+      @name = @@theme_name
     end
   end
 end

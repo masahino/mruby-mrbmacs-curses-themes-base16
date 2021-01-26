@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-synth-midnight-dark_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-synth-midnight-dark.rb", "w") do |f|
 f.puts "# Synth Midnight Terminal Dark scheme by Michaël Ball (http://github.com/michael-ball/)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Synth Midnight Terminal Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Synth Midnight Terminal Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "synth-midnight-dark".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-synth-midnight-dark"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "050608"],
-        ["BASE01", 10, "1a1b1c"],
-        ["BASE02", 11, "28292a"],
-        ["BASE03",  8, "474849"],
-        ["BASE04", 12, "a3a5a6"],
-        ["BASE05",  7, "c1c3c4"],
-        ["BASE06", 13, "cfd1d2"],
-        ["BASE07", 15, "dddfe0"],
-        ["BASE08",  1, "b53b50"],
-        ["BASE09",  9, "ea770d"],
-        ["BASE0A",  3, "c9d364"],
-        ["BASE0B",  2, "06ea61"],
-        ["BASE0C",  6, "42fff9"],
-        ["BASE0D",  4, "03aeff"],
-        ["BASE0E",  5, "ea5ce2"],
-        ["BASE0F", 14, "cd6320"],
-      ] 
+      @@base00 = 0x050608
+      @@base01 = 0x1a1b1c
+      @@base02 = 0x28292a
+      @@base03 = 0x474849
+      @@base04 = 0xa3a5a6
+      @@base05 = 0xc1c3c4
+      @@base06 = 0xcfd1d2
+      @@base07 = 0xdddfe0
+      @@base08 = 0xb53b50
+      @@base09 = 0xea770d
+      @@base0A = 0xc9d364
+      @@base0B = 0x06ea61
+      @@base0C = 0x42fff9
+      @@base0D = 0x03aeff
+      @@base0E = 0xea5ce2
+      @@base0F = 0xcd6320
       super
-      @name = "base16-synth-midnight-dark"
+      @name = @@theme_name
     end
   end
 end

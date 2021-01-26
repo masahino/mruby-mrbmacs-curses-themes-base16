@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-tube_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-tube.rb", "w") do |f|
 f.puts "# London Tube scheme by Jan T. Sott"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "London Tube".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "London Tube".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "tube".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-tube"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "231f20"],
-        ["BASE01", 10, "1c3f95"],
-        ["BASE02", 11, "5a5758"],
-        ["BASE03",  8, "737171"],
-        ["BASE04", 12, "959ca1"],
-        ["BASE05",  7, "d9d8d8"],
-        ["BASE06", 13, "e7e7e8"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "ee2e24"],
-        ["BASE09",  9, "f386a1"],
-        ["BASE0A",  3, "ffd204"],
-        ["BASE0B",  2, "00853e"],
-        ["BASE0C",  6, "85cebc"],
-        ["BASE0D",  4, "009ddc"],
-        ["BASE0E",  5, "98005d"],
-        ["BASE0F", 14, "b06110"],
-      ] 
+      @@base00 = 0x231f20
+      @@base01 = 0x1c3f95
+      @@base02 = 0x5a5758
+      @@base03 = 0x737171
+      @@base04 = 0x959ca1
+      @@base05 = 0xd9d8d8
+      @@base06 = 0xe7e7e8
+      @@base07 = 0xffffff
+      @@base08 = 0xee2e24
+      @@base09 = 0xf386a1
+      @@base0A = 0xffd204
+      @@base0B = 0x00853e
+      @@base0C = 0x85cebc
+      @@base0D = 0x009ddc
+      @@base0E = 0x98005d
+      @@base0F = 0xb06110
       super
-      @name = "base16-tube"
+      @name = @@theme_name
     end
   end
 end

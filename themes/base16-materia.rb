@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-materia_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-materia.rb", "w") do |f|
 f.puts "# Materia scheme by Defman21"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Materia".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Materia".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "materia".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-materia"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "263238"],
-        ["BASE01", 10, "2c393f"],
-        ["BASE02", 11, "37474f"],
-        ["BASE03",  8, "707880"],
-        ["BASE04", 12, "c9ccd3"],
-        ["BASE05",  7, "cdd3de"],
-        ["BASE06", 13, "d5dbe5"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "ec5f67"],
-        ["BASE09",  9, "ea9560"],
-        ["BASE0A",  3, "ffcc00"],
-        ["BASE0B",  2, "8bd649"],
-        ["BASE0C",  6, "80cbc4"],
-        ["BASE0D",  4, "89ddff"],
-        ["BASE0E",  5, "82aaff"],
-        ["BASE0F", 14, "ec5f67"],
-      ] 
+      @@base00 = 0x263238
+      @@base01 = 0x2c393f
+      @@base02 = 0x37474f
+      @@base03 = 0x707880
+      @@base04 = 0xc9ccd3
+      @@base05 = 0xcdd3de
+      @@base06 = 0xd5dbe5
+      @@base07 = 0xffffff
+      @@base08 = 0xec5f67
+      @@base09 = 0xea9560
+      @@base0A = 0xffcc00
+      @@base0B = 0x8bd649
+      @@base0C = 0x80cbc4
+      @@base0D = 0x89ddff
+      @@base0E = 0x82aaff
+      @@base0F = 0xec5f67
       super
-      @name = "base16-materia"
+      @name = @@theme_name
     end
   end
 end

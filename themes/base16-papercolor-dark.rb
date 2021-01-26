@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-papercolor-dark_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-papercolor-dark.rb", "w") do |f|
 f.puts "# PaperColor Dark scheme by Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "PaperColor Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "PaperColor Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "papercolor-dark".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-papercolor-dark"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "1c1c1c"],
-        ["BASE01", 10, "af005f"],
-        ["BASE02", 11, "5faf00"],
-        ["BASE03",  8, "d7af5f"],
-        ["BASE04", 12, "5fafd7"],
-        ["BASE05",  7, "808080"],
-        ["BASE06", 13, "d7875f"],
-        ["BASE07", 15, "d0d0d0"],
-        ["BASE08",  1, "585858"],
-        ["BASE09",  9, "5faf5f"],
-        ["BASE0A",  3, "afd700"],
-        ["BASE0B",  2, "af87d7"],
-        ["BASE0C",  6, "ffaf00"],
-        ["BASE0D",  4, "ff5faf"],
-        ["BASE0E",  5, "00afaf"],
-        ["BASE0F", 14, "5f8787"],
-      ] 
+      @@base00 = 0x1c1c1c
+      @@base01 = 0xaf005f
+      @@base02 = 0x5faf00
+      @@base03 = 0xd7af5f
+      @@base04 = 0x5fafd7
+      @@base05 = 0x808080
+      @@base06 = 0xd7875f
+      @@base07 = 0xd0d0d0
+      @@base08 = 0x585858
+      @@base09 = 0x5faf5f
+      @@base0A = 0xafd700
+      @@base0B = 0xaf87d7
+      @@base0C = 0xffaf00
+      @@base0D = 0xff5faf
+      @@base0E = 0x00afaf
+      @@base0F = 0x5f8787
       super
-      @name = "base16-papercolor-dark"
+      @name = @@theme_name
     end
   end
 end

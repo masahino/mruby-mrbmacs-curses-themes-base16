@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-apathy_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-apathy.rb", "w") do |f|
 f.puts "# Apathy scheme by Jannik Siebert (https://github.com/janniks)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Apathy".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Apathy".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "apathy".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-apathy"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "031a16"],
-        ["BASE01", 10, "0b342d"],
-        ["BASE02", 11, "184e45"],
-        ["BASE03",  8, "2b685e"],
-        ["BASE04", 12, "5f9c92"],
-        ["BASE05",  7, "81b5ac"],
-        ["BASE06", 13, "a7cec8"],
-        ["BASE07", 15, "d2e7e4"],
-        ["BASE08",  1, "3e9688"],
-        ["BASE09",  9, "3e7996"],
-        ["BASE0A",  3, "3e4c96"],
-        ["BASE0B",  2, "883e96"],
-        ["BASE0C",  6, "963e4c"],
-        ["BASE0D",  4, "96883e"],
-        ["BASE0E",  5, "4c963e"],
-        ["BASE0F", 14, "3e965b"],
-      ] 
+      @@base00 = 0x031a16
+      @@base01 = 0x0b342d
+      @@base02 = 0x184e45
+      @@base03 = 0x2b685e
+      @@base04 = 0x5f9c92
+      @@base05 = 0x81b5ac
+      @@base06 = 0xa7cec8
+      @@base07 = 0xd2e7e4
+      @@base08 = 0x3e9688
+      @@base09 = 0x3e7996
+      @@base0A = 0x3e4c96
+      @@base0B = 0x883e96
+      @@base0C = 0x963e4c
+      @@base0D = 0x96883e
+      @@base0E = 0x4c963e
+      @@base0F = 0x3e965b
       super
-      @name = "base16-apathy"
+      @name = @@theme_name
     end
   end
 end

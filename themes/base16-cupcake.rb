@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-cupcake_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-cupcake.rb", "w") do |f|
 f.puts "# Cupcake scheme by Chris Kempson (http://chriskempson.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Cupcake".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Cupcake".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "cupcake".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-cupcake"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "fbf1f2"],
-        ["BASE01", 10, "f2f1f4"],
-        ["BASE02", 11, "d8d5dd"],
-        ["BASE03",  8, "bfb9c6"],
-        ["BASE04", 12, "a59daf"],
-        ["BASE05",  7, "8b8198"],
-        ["BASE06", 13, "72677e"],
-        ["BASE07", 15, "585062"],
-        ["BASE08",  1, "d57e85"],
-        ["BASE09",  9, "ebb790"],
-        ["BASE0A",  3, "dcb16c"],
-        ["BASE0B",  2, "a3b367"],
-        ["BASE0C",  6, "69a9a7"],
-        ["BASE0D",  4, "7297b9"],
-        ["BASE0E",  5, "bb99b4"],
-        ["BASE0F", 14, "baa58c"],
-      ] 
+      @@base00 = 0xfbf1f2
+      @@base01 = 0xf2f1f4
+      @@base02 = 0xd8d5dd
+      @@base03 = 0xbfb9c6
+      @@base04 = 0xa59daf
+      @@base05 = 0x8b8198
+      @@base06 = 0x72677e
+      @@base07 = 0x585062
+      @@base08 = 0xd57e85
+      @@base09 = 0xebb790
+      @@base0A = 0xdcb16c
+      @@base0B = 0xa3b367
+      @@base0C = 0x69a9a7
+      @@base0D = 0x7297b9
+      @@base0E = 0xbb99b4
+      @@base0F = 0xbaa58c
       super
-      @name = "base16-cupcake"
+      @name = @@theme_name
     end
   end
 end

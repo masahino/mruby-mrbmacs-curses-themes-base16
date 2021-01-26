@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-mocha_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-mocha.rb", "w") do |f|
 f.puts "# Mocha scheme by Chris Kempson (http://chriskempson.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Mocha".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Mocha".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "mocha".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-mocha"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "3b3228"],
-        ["BASE01", 10, "534636"],
-        ["BASE02", 11, "645240"],
-        ["BASE03",  8, "7e705a"],
-        ["BASE04", 12, "b8afad"],
-        ["BASE05",  7, "d0c8c6"],
-        ["BASE06", 13, "e9e1dd"],
-        ["BASE07", 15, "f5eeeb"],
-        ["BASE08",  1, "cb6077"],
-        ["BASE09",  9, "d28b71"],
-        ["BASE0A",  3, "f4bc87"],
-        ["BASE0B",  2, "beb55b"],
-        ["BASE0C",  6, "7bbda4"],
-        ["BASE0D",  4, "8ab3b5"],
-        ["BASE0E",  5, "a89bb9"],
-        ["BASE0F", 14, "bb9584"],
-      ] 
+      @@base00 = 0x3b3228
+      @@base01 = 0x534636
+      @@base02 = 0x645240
+      @@base03 = 0x7e705a
+      @@base04 = 0xb8afad
+      @@base05 = 0xd0c8c6
+      @@base06 = 0xe9e1dd
+      @@base07 = 0xf5eeeb
+      @@base08 = 0xcb6077
+      @@base09 = 0xd28b71
+      @@base0A = 0xf4bc87
+      @@base0B = 0xbeb55b
+      @@base0C = 0x7bbda4
+      @@base0D = 0x8ab3b5
+      @@base0E = 0xa89bb9
+      @@base0F = 0xbb9584
       super
-      @name = "base16-mocha"
+      @name = @@theme_name
     end
   end
 end

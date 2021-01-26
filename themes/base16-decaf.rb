@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-decaf_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-decaf.rb", "w") do |f|
 f.puts "# Decaf scheme by Alex Mirrington (https://github.com/alexmirrington)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Decaf".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Decaf".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "decaf".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-decaf"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "2d2d2d"],
-        ["BASE01", 10, "393939"],
-        ["BASE02", 11, "515151"],
-        ["BASE03",  8, "777777"],
-        ["BASE04", 12, "b4b7b4"],
-        ["BASE05",  7, "cccccc"],
-        ["BASE06", 13, "e0e0e0"],
-        ["BASE07", 15, "ffffff"],
-        ["BASE08",  1, "ff7f7b"],
-        ["BASE09",  9, "ffbf70"],
-        ["BASE0A",  3, "ffd67c"],
-        ["BASE0B",  2, "beda78"],
-        ["BASE0C",  6, "bed6ff"],
-        ["BASE0D",  4, "90bee1"],
-        ["BASE0E",  5, "efb3f7"],
-        ["BASE0F", 14, "ff93b3"],
-      ] 
+      @@base00 = 0x2d2d2d
+      @@base01 = 0x393939
+      @@base02 = 0x515151
+      @@base03 = 0x777777
+      @@base04 = 0xb4b7b4
+      @@base05 = 0xcccccc
+      @@base06 = 0xe0e0e0
+      @@base07 = 0xffffff
+      @@base08 = 0xff7f7b
+      @@base09 = 0xffbf70
+      @@base0A = 0xffd67c
+      @@base0B = 0xbeda78
+      @@base0C = 0xbed6ff
+      @@base0D = 0x90bee1
+      @@base0E = 0xefb3f7
+      @@base0F = 0xff93b3
       super
-      @name = "base16-decaf"
+      @name = @@theme_name
     end
   end
 end

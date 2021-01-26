@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-porple_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-porple.rb", "w") do |f|
 f.puts "# Porple scheme by Niek den Breeje (https://github.com/AuditeMarlow)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Porple".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Porple".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "porple".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-porple"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "292c36"],
-        ["BASE01", 10, "333344"],
-        ["BASE02", 11, "474160"],
-        ["BASE03",  8, "65568a"],
-        ["BASE04", 12, "b8b8b8"],
-        ["BASE05",  7, "d8d8d8"],
-        ["BASE06", 13, "e8e8e8"],
-        ["BASE07", 15, "f8f8f8"],
-        ["BASE08",  1, "f84547"],
-        ["BASE09",  9, "d28e5d"],
-        ["BASE0A",  3, "efa16b"],
-        ["BASE0B",  2, "95c76f"],
-        ["BASE0C",  6, "64878f"],
-        ["BASE0D",  4, "8485ce"],
-        ["BASE0E",  5, "b74989"],
-        ["BASE0F", 14, "986841"],
-      ] 
+      @@base00 = 0x292c36
+      @@base01 = 0x333344
+      @@base02 = 0x474160
+      @@base03 = 0x65568a
+      @@base04 = 0xb8b8b8
+      @@base05 = 0xd8d8d8
+      @@base06 = 0xe8e8e8
+      @@base07 = 0xf8f8f8
+      @@base08 = 0xf84547
+      @@base09 = 0xd28e5d
+      @@base0A = 0xefa16b
+      @@base0B = 0x95c76f
+      @@base0C = 0x64878f
+      @@base0D = 0x8485ce
+      @@base0E = 0xb74989
+      @@base0F = 0x986841
       super
-      @name = "base16-porple"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-sandcastle_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-sandcastle.rb", "w") do |f|
 f.puts "# Sandcastle scheme by George Essig (https://github.com/gessig)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Sandcastle".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Sandcastle".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "sandcastle".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-sandcastle"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "282c34"],
-        ["BASE01", 10, "2c323b"],
-        ["BASE02", 11, "3e4451"],
-        ["BASE03",  8, "665c54"],
-        ["BASE04", 12, "928374"],
-        ["BASE05",  7, "a89984"],
-        ["BASE06", 13, "d5c4a1"],
-        ["BASE07", 15, "fdf4c1"],
-        ["BASE08",  1, "83a598"],
-        ["BASE09",  9, "a07e3b"],
-        ["BASE0A",  3, "a07e3b"],
-        ["BASE0B",  2, "528b8b"],
-        ["BASE0C",  6, "83a598"],
-        ["BASE0D",  4, "83a598"],
-        ["BASE0E",  5, "d75f5f"],
-        ["BASE0F", 14, "a87322"],
-      ] 
+      @@base00 = 0x282c34
+      @@base01 = 0x2c323b
+      @@base02 = 0x3e4451
+      @@base03 = 0x665c54
+      @@base04 = 0x928374
+      @@base05 = 0xa89984
+      @@base06 = 0xd5c4a1
+      @@base07 = 0xfdf4c1
+      @@base08 = 0x83a598
+      @@base09 = 0xa07e3b
+      @@base0A = 0xa07e3b
+      @@base0B = 0x528b8b
+      @@base0C = 0x83a598
+      @@base0D = 0x83a598
+      @@base0E = 0xd75f5f
+      @@base0F = 0xa87322
       super
-      @name = "base16-sandcastle"
+      @name = @@theme_name
     end
   end
 end

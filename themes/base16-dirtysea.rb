@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-dirtysea_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-dirtysea.rb", "w") do |f|
 f.puts "# dirtysea scheme by Kahlil (Kal) Hodgson"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "dirtysea".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "dirtysea".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "dirtysea".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-dirtysea"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "e0e0e0"],
-        ["BASE01", 10, "d0dad0"],
-        ["BASE02", 11, "d0d0d0"],
-        ["BASE03",  8, "707070"],
-        ["BASE04", 12, "202020"],
-        ["BASE05",  7, "000000"],
-        ["BASE06", 13, "f8f8f8"],
-        ["BASE07", 15, "c4d9c4"],
-        ["BASE08",  1, "840000"],
-        ["BASE09",  9, "006565"],
-        ["BASE0A",  3, "755b00"],
-        ["BASE0B",  2, "730073"],
-        ["BASE0C",  6, "755b00"],
-        ["BASE0D",  4, "007300"],
-        ["BASE0E",  5, "000090"],
-        ["BASE0F", 14, "755b00"],
-      ] 
+      @@base00 = 0xe0e0e0
+      @@base01 = 0xd0dad0
+      @@base02 = 0xd0d0d0
+      @@base03 = 0x707070
+      @@base04 = 0x202020
+      @@base05 = 0x000000
+      @@base06 = 0xf8f8f8
+      @@base07 = 0xc4d9c4
+      @@base08 = 0x840000
+      @@base09 = 0x006565
+      @@base0A = 0x755b00
+      @@base0B = 0x730073
+      @@base0C = 0x755b00
+      @@base0D = 0x007300
+      @@base0E = 0x000090
+      @@base0F = 0x755b00
       super
-      @name = "base16-dirtysea"
+      @name = @@theme_name
     end
   end
 end

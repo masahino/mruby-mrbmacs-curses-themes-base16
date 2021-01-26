@@ -1,4 +1,4 @@
-File.open("mrblib/theme_base16-{{scheme-slug}}_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-{{scheme-slug}}.rb", "w") do |f|
 f.puts "# {{scheme-name}} scheme by {{scheme-author}}"
 f.puts "module Mrbmacs"
 #class_name = "Base16" + "{{scheme-name}}".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
@@ -7,25 +7,22 @@ f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
     @@theme_name = "base16-{{scheme-slug}}"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "{{base00-hex}}"],
-        ["BASE01", 10, "{{base01-hex}}"],
-        ["BASE02", 11, "{{base02-hex}}"],
-        ["BASE03",  8, "{{base03-hex}}"],
-        ["BASE04", 12, "{{base04-hex}}"],
-        ["BASE05",  7, "{{base05-hex}}"],
-        ["BASE06", 13, "{{base06-hex}}"],
-        ["BASE07", 15, "{{base07-hex}}"],
-        ["BASE08",  1, "{{base08-hex}}"],
-        ["BASE09",  9, "{{base09-hex}}"],
-        ["BASE0A",  3, "{{base0A-hex}}"],
-        ["BASE0B",  2, "{{base0B-hex}}"],
-        ["BASE0C",  6, "{{base0C-hex}}"],
-        ["BASE0D",  4, "{{base0D-hex}}"],
-        ["BASE0E",  5, "{{base0E-hex}}"],
-        ["BASE0F", 14, "{{base0F-hex}}"],
-      ] 
+      @@base00 = 0x{{base00-hex}}
+      @@base01 = 0x{{base01-hex}}
+      @@base02 = 0x{{base02-hex}}
+      @@base03 = 0x{{base03-hex}}
+      @@base04 = 0x{{base04-hex}}
+      @@base05 = 0x{{base05-hex}}
+      @@base06 = 0x{{base06-hex}}
+      @@base07 = 0x{{base07-hex}}
+      @@base08 = 0x{{base08-hex}}
+      @@base09 = 0x{{base09-hex}}
+      @@base0A = 0x{{base0A-hex}}
+      @@base0B = 0x{{base0B-hex}}
+      @@base0C = 0x{{base0C-hex}}
+      @@base0D = 0x{{base0D-hex}}
+      @@base0E = 0x{{base0E-hex}}
+      @@base0F = 0x{{base0F-hex}}
       super
       @name = @@theme_name
     end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-edge-dark_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-edge-dark.rb", "w") do |f|
 f.puts "# Edge Dark scheme by cjayross (https://github.com/cjayross)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Edge Dark".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Edge Dark".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "edge-dark".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-edge-dark"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "262729"],
-        ["BASE01", 10, "88909f"],
-        ["BASE02", 11, "b7bec9"],
-        ["BASE03",  8, "3e4249"],
-        ["BASE04", 12, "73b3e7"],
-        ["BASE05",  7, "b7bec9"],
-        ["BASE06", 13, "d390e7"],
-        ["BASE07", 15, "3e4249"],
-        ["BASE08",  1, "e77171"],
-        ["BASE09",  9, "e77171"],
-        ["BASE0A",  3, "dbb774"],
-        ["BASE0B",  2, "a1bf78"],
-        ["BASE0C",  6, "5ebaa5"],
-        ["BASE0D",  4, "73b3e7"],
-        ["BASE0E",  5, "d390e7"],
-        ["BASE0F", 14, "5ebaa5"],
-      ] 
+      @@base00 = 0x262729
+      @@base01 = 0x88909f
+      @@base02 = 0xb7bec9
+      @@base03 = 0x3e4249
+      @@base04 = 0x73b3e7
+      @@base05 = 0xb7bec9
+      @@base06 = 0xd390e7
+      @@base07 = 0x3e4249
+      @@base08 = 0xe77171
+      @@base09 = 0xe77171
+      @@base0A = 0xdbb774
+      @@base0B = 0xa1bf78
+      @@base0C = 0x5ebaa5
+      @@base0D = 0x73b3e7
+      @@base0E = 0xd390e7
+      @@base0F = 0x5ebaa5
       super
-      @name = "base16-edge-dark"
+      @name = @@theme_name
     end
   end
 end

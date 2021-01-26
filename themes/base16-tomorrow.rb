@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-tomorrow_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-tomorrow.rb", "w") do |f|
 f.puts "# Tomorrow scheme by Chris Kempson (http://chriskempson.com)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Tomorrow".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Tomorrow".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "tomorrow".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-tomorrow"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "ffffff"],
-        ["BASE01", 10, "e0e0e0"],
-        ["BASE02", 11, "d6d6d6"],
-        ["BASE03",  8, "8e908c"],
-        ["BASE04", 12, "969896"],
-        ["BASE05",  7, "4d4d4c"],
-        ["BASE06", 13, "282a2e"],
-        ["BASE07", 15, "1d1f21"],
-        ["BASE08",  1, "c82829"],
-        ["BASE09",  9, "f5871f"],
-        ["BASE0A",  3, "eab700"],
-        ["BASE0B",  2, "718c00"],
-        ["BASE0C",  6, "3e999f"],
-        ["BASE0D",  4, "4271ae"],
-        ["BASE0E",  5, "8959a8"],
-        ["BASE0F", 14, "a3685a"],
-      ] 
+      @@base00 = 0xffffff
+      @@base01 = 0xe0e0e0
+      @@base02 = 0xd6d6d6
+      @@base03 = 0x8e908c
+      @@base04 = 0x969896
+      @@base05 = 0x4d4d4c
+      @@base06 = 0x282a2e
+      @@base07 = 0x1d1f21
+      @@base08 = 0xc82829
+      @@base09 = 0xf5871f
+      @@base0A = 0xeab700
+      @@base0B = 0x718c00
+      @@base0C = 0x3e999f
+      @@base0D = 0x4271ae
+      @@base0E = 0x8959a8
+      @@base0F = 0xa3685a
       super
-      @name = "base16-tomorrow"
+      @name = @@theme_name
     end
   end
 end

@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-sagelight_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-sagelight.rb", "w") do |f|
 f.puts "# Sagelight scheme by Carter Veldhuizen"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "Sagelight".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "Sagelight".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "sagelight".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-sagelight"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "f8f8f8"],
-        ["BASE01", 10, "e8e8e8"],
-        ["BASE02", 11, "d8d8d8"],
-        ["BASE03",  8, "b8b8b8"],
-        ["BASE04", 12, "585858"],
-        ["BASE05",  7, "383838"],
-        ["BASE06", 13, "282828"],
-        ["BASE07", 15, "181818"],
-        ["BASE08",  1, "fa8480"],
-        ["BASE09",  9, "ffaa61"],
-        ["BASE0A",  3, "ffdc61"],
-        ["BASE0B",  2, "a0d2c8"],
-        ["BASE0C",  6, "a2d6f5"],
-        ["BASE0D",  4, "a0a7d2"],
-        ["BASE0E",  5, "c8a0d2"],
-        ["BASE0F", 14, "d2b2a0"],
-      ] 
+      @@base00 = 0xf8f8f8
+      @@base01 = 0xe8e8e8
+      @@base02 = 0xd8d8d8
+      @@base03 = 0xb8b8b8
+      @@base04 = 0x585858
+      @@base05 = 0x383838
+      @@base06 = 0x282828
+      @@base07 = 0x181818
+      @@base08 = 0xfa8480
+      @@base09 = 0xffaa61
+      @@base0A = 0xffdc61
+      @@base0B = 0xa0d2c8
+      @@base0C = 0xa2d6f5
+      @@base0D = 0xa0a7d2
+      @@base0E = 0xc8a0d2
+      @@base0F = 0xd2b2a0
       super
-      @name = "base16-sagelight"
+      @name = @@theme_name
     end
   end
 end

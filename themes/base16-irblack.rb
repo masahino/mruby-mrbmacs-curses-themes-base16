@@ -1,31 +1,30 @@
-File.open("mrblib/theme_base16-irblack_curses.rb", "w") do |f|
+File.open("mrblib/theme_base16-irblack.rb", "w") do |f|
 f.puts "# IR Black scheme by Timothée Poisot (http://timotheepoisot.fr)"
 f.puts "module Mrbmacs"
-class_name = "Base16" + "IR Black".gsub(' ', '') + "Theme"
+#class_name = "Base16" + "IR Black".gsub(' ', '').gsub(/\(|\)/,'') + "Theme"
+class_name = "Base16" + "irblack".capitalize.gsub(/-(\w)/){$1.upcase} + "Theme"
 f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
+    @@theme_name = "base16-irblack"
     def initialize
-      curses_init
-      @color_list = [
-        ["BASE00",  0, "000000"],
-        ["BASE01", 10, "242422"],
-        ["BASE02", 11, "484844"],
-        ["BASE03",  8, "6c6c66"],
-        ["BASE04", 12, "918f88"],
-        ["BASE05",  7, "b5b3aa"],
-        ["BASE06", 13, "d9d7cc"],
-        ["BASE07", 15, "fdfbee"],
-        ["BASE08",  1, "ff6c60"],
-        ["BASE09",  9, "e9c062"],
-        ["BASE0A",  3, "ffffb6"],
-        ["BASE0B",  2, "a8ff60"],
-        ["BASE0C",  6, "c6c5fe"],
-        ["BASE0D",  4, "96cbfe"],
-        ["BASE0E",  5, "ff73fd"],
-        ["BASE0F", 14, "b18a3d"],
-      ] 
+      @@base00 = 0x000000
+      @@base01 = 0x242422
+      @@base02 = 0x484844
+      @@base03 = 0x6c6c66
+      @@base04 = 0x918f88
+      @@base05 = 0xb5b3aa
+      @@base06 = 0xd9d7cc
+      @@base07 = 0xfdfbee
+      @@base08 = 0xff6c60
+      @@base09 = 0xe9c062
+      @@base0A = 0xffffb6
+      @@base0B = 0xa8ff60
+      @@base0C = 0xc6c5fe
+      @@base0D = 0x96cbfe
+      @@base0E = 0xff73fd
+      @@base0F = 0xb18a3d
       super
-      @name = "base16-irblack"
+      @name = @@theme_name
     end
   end
 end
