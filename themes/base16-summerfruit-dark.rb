@@ -15,14 +15,14 @@ f.print <<EOS
       @@base05 = 0xd0d0d0
       @@base06 = 0xe0e0e0
       @@base07 = 0xffffff
-      @@base08 = 0xff0086
-      @@base09 = 0xfd8900
-      @@base0A = 0xaba800
-      @@base0B = 0x00c918
-      @@base0C = 0x1faaaa
-      @@base0D = 0x3777e6
-      @@base0E = 0xad00a1
-      @@base0F = 0xcc6633
+      @@base08 = 0x8600ff
+      @@base09 = 0x0089fd
+      @@base0A = 0x00a8ab
+      @@base0B = 0x18c900
+      @@base0C = 0xaaaa1f
+      @@base0D = 0xe67737
+      @@base0E = 0xa100ad
+      @@base0F = 0x3366cc
       super
       @name = @@theme_name
     end

@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16PorpleTheme < Base16Theme
     @@theme_name = "base16-porple"
     def initialize
-      @@base00 = 0x292c36
-      @@base01 = 0x333344
-      @@base02 = 0x474160
-      @@base03 = 0x65568a
+      @@base00 = 0x362c29
+      @@base01 = 0x443333
+      @@base02 = 0x604147
+      @@base03 = 0x8a5665
       @@base04 = 0xb8b8b8
       @@base05 = 0xd8d8d8
       @@base06 = 0xe8e8e8
       @@base07 = 0xf8f8f8
-      @@base08 = 0xf84547
-      @@base09 = 0xd28e5d
-      @@base0A = 0xefa16b
-      @@base0B = 0x95c76f
-      @@base0C = 0x64878f
-      @@base0D = 0x8485ce
-      @@base0E = 0xb74989
-      @@base0F = 0x986841
+      @@base08 = 0x4745f8
+      @@base09 = 0x5d8ed2
+      @@base0A = 0x6ba1ef
+      @@base0B = 0x6fc795
+      @@base0C = 0x8f8764
+      @@base0D = 0xce8584
+      @@base0E = 0x8949b7
+      @@base0F = 0x416898
       super
       @name = @@theme_name
     end

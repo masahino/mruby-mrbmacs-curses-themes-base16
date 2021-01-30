@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16AtelierSulphurpoolTheme < Base16Theme
     @@theme_name = "base16-atelier-sulphurpool"
     def initialize
-      @@base00 = 0x202746
-      @@base01 = 0x293256
-      @@base02 = 0x5e6687
-      @@base03 = 0x6b7394
-      @@base04 = 0x898ea4
-      @@base05 = 0x979db4
-      @@base06 = 0xdfe2f1
-      @@base07 = 0xf5f7ff
-      @@base08 = 0xc94922
-      @@base09 = 0xc76b29
-      @@base0A = 0xc08b30
-      @@base0B = 0xac9739
-      @@base0C = 0x22a2c9
-      @@base0D = 0x3d8fd1
-      @@base0E = 0x6679cc
-      @@base0F = 0x9c637a
+      @@base00 = 0x462720
+      @@base01 = 0x563229
+      @@base02 = 0x87665e
+      @@base03 = 0x94736b
+      @@base04 = 0xa48e89
+      @@base05 = 0xb49d97
+      @@base06 = 0xf1e2df
+      @@base07 = 0xfff7f5
+      @@base08 = 0x2249c9
+      @@base09 = 0x296bc7
+      @@base0A = 0x308bc0
+      @@base0B = 0x3997ac
+      @@base0C = 0xc9a222
+      @@base0D = 0xd18f3d
+      @@base0E = 0xcc7966
+      @@base0F = 0x7a639c
       super
       @name = @@theme_name
     end

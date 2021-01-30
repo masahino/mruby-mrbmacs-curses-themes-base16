@@ -8,21 +8,21 @@ f.print <<EOS
     @@theme_name = "base16-darkviolet"
     def initialize
       @@base00 = 0x000000
-      @@base01 = 0x231a40
-      @@base02 = 0x432d59
-      @@base03 = 0x593380
+      @@base01 = 0x401a23
+      @@base02 = 0x592d43
+      @@base03 = 0x803359
       @@base04 = 0x00ff00
-      @@base05 = 0xb08ae6
-      @@base06 = 0x9045e6
-      @@base07 = 0xa366ff
-      @@base08 = 0xa82ee6
-      @@base09 = 0xbb66cc
+      @@base05 = 0xe68ab0
+      @@base06 = 0xe64590
+      @@base07 = 0xff66a3
+      @@base08 = 0xe62ea8
+      @@base09 = 0xcc66bb
       @@base0A = 0xf29df2
-      @@base0B = 0x4595e6
-      @@base0C = 0x40dfff
-      @@base0D = 0x4136d9
-      @@base0E = 0x7e5ce6
-      @@base0F = 0xa886bf
+      @@base0B = 0xe69545
+      @@base0C = 0xffdf40
+      @@base0D = 0xd93641
+      @@base0E = 0xe65c7e
+      @@base0F = 0xbf86a8
       super
       @name = @@theme_name
     end

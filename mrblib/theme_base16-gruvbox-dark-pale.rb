@@ -8,17 +8,17 @@ module Mrbmacs
       @@base02 = 0x4e4e4e
       @@base03 = 0x8a8a8a
       @@base04 = 0x949494
-      @@base05 = 0xdab997
-      @@base06 = 0xd5c4a1
-      @@base07 = 0xebdbb2
-      @@base08 = 0xd75f5f
-      @@base09 = 0xff8700
-      @@base0A = 0xffaf00
-      @@base0B = 0xafaf00
+      @@base05 = 0x97b9da
+      @@base06 = 0xa1c4d5
+      @@base07 = 0xb2dbeb
+      @@base08 = 0x5f5fd7
+      @@base09 = 0x0087ff
+      @@base0A = 0x00afff
+      @@base0B = 0x00afaf
       @@base0C = 0x85ad85
-      @@base0D = 0x83adad
-      @@base0E = 0xd485ad
-      @@base0F = 0xd65d0e
+      @@base0D = 0xadad83
+      @@base0E = 0xad85d4
+      @@base0F = 0x0e5dd6
       super
       @name = @@theme_name
     end

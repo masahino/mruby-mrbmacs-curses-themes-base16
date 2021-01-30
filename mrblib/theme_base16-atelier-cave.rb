@@ -3,21 +3,21 @@ module Mrbmacs
   class Base16AtelierCaveTheme < Base16Theme
     @@theme_name = "base16-atelier-cave"
     def initialize
-      @@base00 = 0x19171c
-      @@base01 = 0x26232a
-      @@base02 = 0x585260
-      @@base03 = 0x655f6d
-      @@base04 = 0x7e7887
-      @@base05 = 0x8b8792
-      @@base06 = 0xe2dfe7
-      @@base07 = 0xefecf4
-      @@base08 = 0xbe4678
-      @@base09 = 0xaa573c
-      @@base0A = 0xa06e3b
-      @@base0B = 0x2a9292
-      @@base0C = 0x398bc6
-      @@base0D = 0x576ddb
-      @@base0E = 0x955ae7
+      @@base00 = 0x1c1719
+      @@base01 = 0x2a2326
+      @@base02 = 0x605258
+      @@base03 = 0x6d5f65
+      @@base04 = 0x87787e
+      @@base05 = 0x92878b
+      @@base06 = 0xe7dfe2
+      @@base07 = 0xf4ecef
+      @@base08 = 0x7846be
+      @@base09 = 0x3c57aa
+      @@base0A = 0x3b6ea0
+      @@base0B = 0x92922a
+      @@base0C = 0xc68b39
+      @@base0D = 0xdb6d57
+      @@base0E = 0xe75a95
       @@base0F = 0xbf40bf
       super
       @name = @@theme_name

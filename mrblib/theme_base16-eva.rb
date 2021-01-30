@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16EvaTheme < Base16Theme
     @@theme_name = "base16-eva"
     def initialize
-      @@base00 = 0x2a3b4d
-      @@base01 = 0x3d566f
-      @@base02 = 0x4b6988
-      @@base03 = 0x55799c
-      @@base04 = 0x7e90a3
-      @@base05 = 0x9fa2a6
-      @@base06 = 0xd6d7d9
+      @@base00 = 0x4d3b2a
+      @@base01 = 0x6f563d
+      @@base02 = 0x88694b
+      @@base03 = 0x9c7955
+      @@base04 = 0xa3907e
+      @@base05 = 0xa6a29f
+      @@base06 = 0xd9d7d6
       @@base07 = 0xffffff
-      @@base08 = 0xc4676c
-      @@base09 = 0xff9966
-      @@base0A = 0xffff66
+      @@base08 = 0x6c67c4
+      @@base09 = 0x6699ff
+      @@base0A = 0x66ffff
       @@base0B = 0x66ff66
-      @@base0C = 0x4b8f77
-      @@base0D = 0x15f4ee
-      @@base0E = 0x9c6cd3
-      @@base0F = 0xbb64a9
+      @@base0C = 0x778f4b
+      @@base0D = 0xeef415
+      @@base0E = 0xd36c9c
+      @@base0F = 0xa964bb
       super
       @name = @@theme_name
     end

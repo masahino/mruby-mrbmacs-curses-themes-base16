@@ -7,22 +7,22 @@ f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
     @@theme_name = "base16-woodland"
     def initialize
-      @@base00 = 0x231e18
-      @@base01 = 0x302b25
-      @@base02 = 0x48413a
-      @@base03 = 0x9d8b70
-      @@base04 = 0xb4a490
-      @@base05 = 0xcabcb1
-      @@base06 = 0xd7c8bc
-      @@base07 = 0xe4d4c8
-      @@base08 = 0xd35c5c
-      @@base09 = 0xca7f32
-      @@base0A = 0xe0ac16
-      @@base0B = 0xb7ba53
-      @@base0C = 0x6eb958
-      @@base0D = 0x88a4d3
-      @@base0E = 0xbb90e2
-      @@base0F = 0xb49368
+      @@base00 = 0x181e23
+      @@base01 = 0x252b30
+      @@base02 = 0x3a4148
+      @@base03 = 0x708b9d
+      @@base04 = 0x90a4b4
+      @@base05 = 0xb1bcca
+      @@base06 = 0xbcc8d7
+      @@base07 = 0xc8d4e4
+      @@base08 = 0x5c5cd3
+      @@base09 = 0x327fca
+      @@base0A = 0x16ace0
+      @@base0B = 0x53bab7
+      @@base0C = 0x58b96e
+      @@base0D = 0xd3a488
+      @@base0E = 0xe290bb
+      @@base0F = 0x6893b4
       super
       @name = @@theme_name
     end

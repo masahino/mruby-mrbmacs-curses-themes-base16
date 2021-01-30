@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16GigavoltTheme < Base16Theme
     @@theme_name = "base16-gigavolt"
     def initialize
-      @@base00 = 0x202126
-      @@base01 = 0x2d303d
-      @@base02 = 0x5a576e
-      @@base03 = 0xa1d2e6
-      @@base04 = 0xcad3ff
-      @@base05 = 0xe9e7e1
-      @@base06 = 0xeff0f9
-      @@base07 = 0xf2fbff
-      @@base08 = 0xff661a
-      @@base09 = 0x19f988
-      @@base0A = 0xffdc2d
-      @@base0B = 0xf2e6a9
-      @@base0C = 0xfb6acb
-      @@base0D = 0x40bfff
-      @@base0E = 0xae94f9
-      @@base0F = 0x6187ff
+      @@base00 = 0x262120
+      @@base01 = 0x3d302d
+      @@base02 = 0x6e575a
+      @@base03 = 0xe6d2a1
+      @@base04 = 0xffd3ca
+      @@base05 = 0xe1e7e9
+      @@base06 = 0xf9f0ef
+      @@base07 = 0xfffbf2
+      @@base08 = 0x1a66ff
+      @@base09 = 0x88f919
+      @@base0A = 0x2ddcff
+      @@base0B = 0xa9e6f2
+      @@base0C = 0xcb6afb
+      @@base0D = 0xffbf40
+      @@base0E = 0xf994ae
+      @@base0F = 0xff8761
       super
       @name = @@theme_name
     end

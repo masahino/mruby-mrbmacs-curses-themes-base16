@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16SolarflareLightTheme < Base16Theme
     @@theme_name = "base16-solarflare-light"
     def initialize
-      @@base00 = 0xf5f7fa
-      @@base01 = 0xe8e9ed
-      @@base02 = 0xa6afb8
-      @@base03 = 0x85939e
-      @@base04 = 0x667581
-      @@base05 = 0x586875
-      @@base06 = 0x222e38
-      @@base07 = 0x18262f
-      @@base08 = 0xef5253
-      @@base09 = 0xe66b2b
-      @@base0A = 0xe4b51c
-      @@base0B = 0x7cc844
-      @@base0C = 0x52cbb0
-      @@base0D = 0x33b5e1
-      @@base0E = 0xa363d5
-      @@base0F = 0xd73c9a
+      @@base00 = 0xfaf7f5
+      @@base01 = 0xede9e8
+      @@base02 = 0xb8afa6
+      @@base03 = 0x9e9385
+      @@base04 = 0x817566
+      @@base05 = 0x756858
+      @@base06 = 0x382e22
+      @@base07 = 0x2f2618
+      @@base08 = 0x5352ef
+      @@base09 = 0x2b6be6
+      @@base0A = 0x1cb5e4
+      @@base0B = 0x44c87c
+      @@base0C = 0xb0cb52
+      @@base0D = 0xe1b533
+      @@base0E = 0xd563a3
+      @@base0F = 0x9a3cd7
       super
       @name = @@theme_name
     end

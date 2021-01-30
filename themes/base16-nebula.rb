@@ -7,22 +7,22 @@ f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
     @@theme_name = "base16-nebula"
     def initialize
-      @@base00 = 0x22273b
-      @@base01 = 0x414f60
-      @@base02 = 0x5a8380
-      @@base03 = 0x6e6f72
-      @@base04 = 0x87888b
-      @@base05 = 0xa4a6a9
-      @@base06 = 0xc7c9cd
-      @@base07 = 0x8dbdaa
-      @@base08 = 0x777abc
-      @@base09 = 0x94929e
-      @@base0A = 0x4f9062
-      @@base0B = 0x6562a8
-      @@base0C = 0x226f68
-      @@base0D = 0x4d6bb6
-      @@base0E = 0x716cae
-      @@base0F = 0x8c70a7
+      @@base00 = 0x3b2722
+      @@base01 = 0x604f41
+      @@base02 = 0x80835a
+      @@base03 = 0x726f6e
+      @@base04 = 0x8b8887
+      @@base05 = 0xa9a6a4
+      @@base06 = 0xcdc9c7
+      @@base07 = 0xaabd8d
+      @@base08 = 0xbc7a77
+      @@base09 = 0x9e9294
+      @@base0A = 0x62904f
+      @@base0B = 0xa86265
+      @@base0C = 0x686f22
+      @@base0D = 0xb66b4d
+      @@base0E = 0xae6c71
+      @@base0F = 0xa7708c
       super
       @name = @@theme_name
     end

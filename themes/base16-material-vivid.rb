@@ -7,22 +7,22 @@ f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
     @@theme_name = "base16-material-vivid"
     def initialize
-      @@base00 = 0x202124
-      @@base01 = 0x27292c
-      @@base02 = 0x323639
-      @@base03 = 0x44464d
-      @@base04 = 0x676c71
-      @@base05 = 0x80868b
+      @@base00 = 0x242120
+      @@base01 = 0x2c2927
+      @@base02 = 0x393632
+      @@base03 = 0x4d4644
+      @@base04 = 0x716c67
+      @@base05 = 0x8b8680
       @@base06 = 0x9e9e9e
       @@base07 = 0xffffff
-      @@base08 = 0xf44336
-      @@base09 = 0xff9800
-      @@base0A = 0xffeb3b
-      @@base0B = 0x00e676
-      @@base0C = 0x00bcd4
-      @@base0D = 0x2196f3
-      @@base0E = 0x673ab7
-      @@base0F = 0x8d6e63
+      @@base08 = 0x3643f4
+      @@base09 = 0x0098ff
+      @@base0A = 0x3bebff
+      @@base0B = 0x76e600
+      @@base0C = 0xd4bc00
+      @@base0D = 0xf39621
+      @@base0E = 0xb73a67
+      @@base0F = 0x636e8d
       super
       @name = @@theme_name
     end

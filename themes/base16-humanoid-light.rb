@@ -7,22 +7,22 @@ f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
     @@theme_name = "base16-humanoid-light"
     def initialize
-      @@base00 = 0xf8f8f2
-      @@base01 = 0xefefe9
-      @@base02 = 0xdeded8
-      @@base03 = 0xc0c0bd
-      @@base04 = 0x60615d
-      @@base05 = 0x232629
-      @@base06 = 0x2f3337
-      @@base07 = 0x070708
-      @@base08 = 0xb0151a
-      @@base09 = 0xff3d00
-      @@base0A = 0xffb627
-      @@base0B = 0x388e3c
-      @@base0C = 0x008e8e
-      @@base0D = 0x0082c9
-      @@base0E = 0x700f98
-      @@base0F = 0xb27701
+      @@base00 = 0xf2f8f8
+      @@base01 = 0xe9efef
+      @@base02 = 0xd8dede
+      @@base03 = 0xbdc0c0
+      @@base04 = 0x5d6160
+      @@base05 = 0x292623
+      @@base06 = 0x37332f
+      @@base07 = 0x080707
+      @@base08 = 0x1a15b0
+      @@base09 = 0x003dff
+      @@base0A = 0x27b6ff
+      @@base0B = 0x3c8e38
+      @@base0C = 0x8e8e00
+      @@base0D = 0xc98200
+      @@base0E = 0x980f70
+      @@base0F = 0x0177b2
       super
       @name = @@theme_name
     end

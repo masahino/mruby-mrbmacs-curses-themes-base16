@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16CodeschoolTheme < Base16Theme
     @@theme_name = "base16-codeschool"
     def initialize
-      @@base00 = 0x232c31
-      @@base01 = 0x1c3657
-      @@base02 = 0x2a343a
-      @@base03 = 0x3f4944
-      @@base04 = 0x84898c
-      @@base05 = 0x9ea7a6
-      @@base06 = 0xa7cfa3
-      @@base07 = 0xb5d8f6
-      @@base08 = 0x2a5491
-      @@base09 = 0x43820d
-      @@base0A = 0xa03b1e
-      @@base0B = 0x237986
-      @@base0C = 0xb02f30
-      @@base0D = 0x484d79
-      @@base0E = 0xc59820
-      @@base0F = 0xc98344
+      @@base00 = 0x312c23
+      @@base01 = 0x57361c
+      @@base02 = 0x3a342a
+      @@base03 = 0x44493f
+      @@base04 = 0x8c8984
+      @@base05 = 0xa6a79e
+      @@base06 = 0xa3cfa7
+      @@base07 = 0xf6d8b5
+      @@base08 = 0x91542a
+      @@base09 = 0x0d8243
+      @@base0A = 0x1e3ba0
+      @@base0B = 0x867923
+      @@base0C = 0x302fb0
+      @@base0D = 0x794d48
+      @@base0E = 0x2098c5
+      @@base0F = 0x4483c9
       super
       @name = @@theme_name
     end

@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16SetiTheme < Base16Theme
     @@theme_name = "base16-seti"
     def initialize
-      @@base00 = 0x151718
-      @@base01 = 0x282a2b
-      @@base02 = 0x3b758c
-      @@base03 = 0x41535b
-      @@base04 = 0x43a5d5
+      @@base00 = 0x181715
+      @@base01 = 0x2b2a28
+      @@base02 = 0x8c753b
+      @@base03 = 0x5b5341
+      @@base04 = 0xd5a543
       @@base05 = 0xd6d6d6
       @@base06 = 0xeeeeee
       @@base07 = 0xffffff
-      @@base08 = 0xcd3f45
-      @@base09 = 0xdb7b55
-      @@base0A = 0xe6cd69
-      @@base0B = 0x9fca56
-      @@base0C = 0x55dbbe
-      @@base0D = 0x55b5db
-      @@base0E = 0xa074c4
-      @@base0F = 0x8a553f
+      @@base08 = 0x453fcd
+      @@base09 = 0x557bdb
+      @@base0A = 0x69cde6
+      @@base0B = 0x56ca9f
+      @@base0C = 0xbedb55
+      @@base0D = 0xdbb555
+      @@base0E = 0xc474a0
+      @@base0F = 0x3f558a
       super
       @name = @@theme_name
     end

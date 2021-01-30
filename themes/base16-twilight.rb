@@ -8,21 +8,21 @@ f.print <<EOS
     @@theme_name = "base16-twilight"
     def initialize
       @@base00 = 0x1e1e1e
-      @@base01 = 0x323537
-      @@base02 = 0x464b50
-      @@base03 = 0x5f5a60
-      @@base04 = 0x838184
+      @@base01 = 0x373532
+      @@base02 = 0x504b46
+      @@base03 = 0x605a5f
+      @@base04 = 0x848183
       @@base05 = 0xa7a7a7
       @@base06 = 0xc3c3c3
       @@base07 = 0xffffff
-      @@base08 = 0xcf6a4c
-      @@base09 = 0xcda869
-      @@base0A = 0xf9ee98
-      @@base0B = 0x8f9d6a
-      @@base0C = 0xafc4db
-      @@base0D = 0x7587a6
-      @@base0E = 0x9b859d
-      @@base0F = 0x9b703f
+      @@base08 = 0x4c6acf
+      @@base09 = 0x69a8cd
+      @@base0A = 0x98eef9
+      @@base0B = 0x6a9d8f
+      @@base0C = 0xdbc4af
+      @@base0D = 0xa68775
+      @@base0E = 0x9d859b
+      @@base0F = 0x3f709b
       super
       @name = @@theme_name
     end

@@ -7,22 +7,22 @@ f.puts "  class #{class_name} < Base16Theme"
 f.print <<EOS
     @@theme_name = "base16-atelier-savanna"
     def initialize
-      @@base00 = 0x171c19
-      @@base01 = 0x232a25
-      @@base02 = 0x526057
-      @@base03 = 0x5f6d64
-      @@base04 = 0x78877d
-      @@base05 = 0x87928a
-      @@base06 = 0xdfe7e2
-      @@base07 = 0xecf4ee
-      @@base08 = 0xb16139
-      @@base09 = 0x9f713c
-      @@base0A = 0xa07e3b
-      @@base0B = 0x489963
-      @@base0C = 0x1c9aa0
-      @@base0D = 0x478c90
-      @@base0E = 0x55859b
-      @@base0F = 0x867469
+      @@base00 = 0x191c17
+      @@base01 = 0x252a23
+      @@base02 = 0x576052
+      @@base03 = 0x646d5f
+      @@base04 = 0x7d8778
+      @@base05 = 0x8a9287
+      @@base06 = 0xe2e7df
+      @@base07 = 0xeef4ec
+      @@base08 = 0x3961b1
+      @@base09 = 0x3c719f
+      @@base0A = 0x3b7ea0
+      @@base0B = 0x639948
+      @@base0C = 0xa09a1c
+      @@base0D = 0x908c47
+      @@base0E = 0x9b8555
+      @@base0F = 0x697486
       super
       @name = @@theme_name
     end

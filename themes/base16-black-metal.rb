@@ -15,10 +15,10 @@ f.print <<EOS
       @@base05 = 0xc1c1c1
       @@base06 = 0x999999
       @@base07 = 0xc1c1c1
-      @@base08 = 0x5f8787
+      @@base08 = 0x87875f
       @@base09 = 0xaaaaaa
-      @@base0A = 0xa06666
-      @@base0B = 0xdd9999
+      @@base0A = 0x6666a0
+      @@base0B = 0x9999dd
       @@base0C = 0xaaaaaa
       @@base0D = 0x888888
       @@base0E = 0x999999

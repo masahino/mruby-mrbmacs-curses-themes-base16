@@ -8,21 +8,21 @@ f.print <<EOS
     @@theme_name = "base16-unikitty-light"
     def initialize
       @@base00 = 0xffffff
-      @@base01 = 0xe1e1e2
-      @@base02 = 0xc4c3c5
-      @@base03 = 0xa7a5a8
-      @@base04 = 0x89878b
-      @@base05 = 0x6c696e
-      @@base06 = 0x4f4b51
-      @@base07 = 0x322d34
-      @@base08 = 0xd8137f
-      @@base09 = 0xd65407
-      @@base0A = 0xdc8a0e
-      @@base0B = 0x17ad98
-      @@base0C = 0x149bda
-      @@base0D = 0x775dff
-      @@base0E = 0xaa17e6
-      @@base0F = 0xe013d0
+      @@base01 = 0xe2e1e1
+      @@base02 = 0xc5c3c4
+      @@base03 = 0xa8a5a7
+      @@base04 = 0x8b8789
+      @@base05 = 0x6e696c
+      @@base06 = 0x514b4f
+      @@base07 = 0x342d32
+      @@base08 = 0x7f13d8
+      @@base09 = 0x0754d6
+      @@base0A = 0x0e8adc
+      @@base0B = 0x98ad17
+      @@base0C = 0xda9b14
+      @@base0D = 0xff5d77
+      @@base0E = 0xe617aa
+      @@base0F = 0xd013e0
       super
       @name = @@theme_name
     end

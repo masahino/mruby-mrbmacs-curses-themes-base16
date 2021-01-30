@@ -9,20 +9,20 @@ f.print <<EOS
     def initialize
       @@base00 = 0xf1ecf1
       @@base01 = 0xe0dee0
-      @@base02 = 0xd8d5d5
-      @@base03 = 0xb5b4b6
-      @@base04 = 0x979598
+      @@base02 = 0xd5d5d8
+      @@base03 = 0xb6b4b5
+      @@base04 = 0x989597
       @@base05 = 0x515151
-      @@base06 = 0x474545
-      @@base07 = 0x2d2c2c
-      @@base08 = 0xfe3e31
-      @@base09 = 0xfe6d08
-      @@base0A = 0xf7e203
-      @@base0B = 0x47f74c
-      @@base0C = 0x0f9cfd
-      @@base0D = 0x2931df
-      @@base0E = 0x611fce
-      @@base0F = 0xb16f40
+      @@base06 = 0x454547
+      @@base07 = 0x2c2c2d
+      @@base08 = 0x313efe
+      @@base09 = 0x086dfe
+      @@base0A = 0x03e2f7
+      @@base0B = 0x4cf747
+      @@base0C = 0xfd9c0f
+      @@base0D = 0xdf3129
+      @@base0E = 0xce1f61
+      @@base0F = 0x406fb1
       super
       @name = @@theme_name
     end

@@ -11,14 +11,14 @@ module Mrbmacs
       @@base05 = 0x000000
       @@base06 = 0xf8f8f8
       @@base07 = 0xc4d9c4
-      @@base08 = 0x840000
-      @@base09 = 0x006565
-      @@base0A = 0x755b00
+      @@base08 = 0x000084
+      @@base09 = 0x656500
+      @@base0A = 0x005b75
       @@base0B = 0x730073
-      @@base0C = 0x755b00
+      @@base0C = 0x005b75
       @@base0D = 0x007300
-      @@base0E = 0x000090
-      @@base0F = 0x755b00
+      @@base0E = 0x900000
+      @@base0F = 0x005b75
       super
       @name = @@theme_name
     end

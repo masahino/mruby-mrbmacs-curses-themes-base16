@@ -4,21 +4,21 @@ module Mrbmacs
     @@theme_name = "base16-railscasts"
     def initialize
       @@base00 = 0x2b2b2b
-      @@base01 = 0x272935
-      @@base02 = 0x3a4055
-      @@base03 = 0x5a647e
-      @@base04 = 0xd4cfc9
-      @@base05 = 0xe6e1dc
-      @@base06 = 0xf4f1ed
-      @@base07 = 0xf9f7f3
-      @@base08 = 0xda4939
-      @@base09 = 0xcc7833
-      @@base0A = 0xffc66d
-      @@base0B = 0xa5c261
-      @@base0C = 0x519f50
-      @@base0D = 0x6d9cbe
-      @@base0E = 0xb6b3eb
-      @@base0F = 0xbc9458
+      @@base01 = 0x352927
+      @@base02 = 0x55403a
+      @@base03 = 0x7e645a
+      @@base04 = 0xc9cfd4
+      @@base05 = 0xdce1e6
+      @@base06 = 0xedf1f4
+      @@base07 = 0xf3f7f9
+      @@base08 = 0x3949da
+      @@base09 = 0x3378cc
+      @@base0A = 0x6dc6ff
+      @@base0B = 0x61c2a5
+      @@base0C = 0x509f51
+      @@base0D = 0xbe9c6d
+      @@base0E = 0xebb3b6
+      @@base0F = 0x5894bc
       super
       @name = @@theme_name
     end

@@ -11,10 +11,10 @@ module Mrbmacs
       @@base05 = 0xc1c1c1
       @@base06 = 0x999999
       @@base07 = 0xc1c1c1
-      @@base08 = 0x5f8787
+      @@base08 = 0x87875f
       @@base09 = 0xaaaaaa
-      @@base0A = 0x777755
-      @@base0B = 0xaa9988
+      @@base0A = 0x557777
+      @@base0B = 0x8899aa
       @@base0C = 0xaaaaaa
       @@base0D = 0x888888
       @@base0E = 0x999999

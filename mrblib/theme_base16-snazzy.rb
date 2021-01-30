@@ -3,22 +3,22 @@ module Mrbmacs
   class Base16SnazzyTheme < Base16Theme
     @@theme_name = "base16-snazzy"
     def initialize
-      @@base00 = 0x282a36
-      @@base01 = 0x34353e
-      @@base02 = 0x43454f
-      @@base03 = 0x78787e
-      @@base04 = 0xa5a5a9
-      @@base05 = 0xe2e4e5
-      @@base06 = 0xeff0eb
-      @@base07 = 0xf1f1f0
-      @@base08 = 0xff5c57
-      @@base09 = 0xff9f43
-      @@base0A = 0xf3f99d
-      @@base0B = 0x5af78e
-      @@base0C = 0x9aedfe
-      @@base0D = 0x57c7ff
-      @@base0E = 0xff6ac1
-      @@base0F = 0xb2643c
+      @@base00 = 0x362a28
+      @@base01 = 0x3e3534
+      @@base02 = 0x4f4543
+      @@base03 = 0x7e7878
+      @@base04 = 0xa9a5a5
+      @@base05 = 0xe5e4e2
+      @@base06 = 0xebf0ef
+      @@base07 = 0xf0f1f1
+      @@base08 = 0x575cff
+      @@base09 = 0x439fff
+      @@base0A = 0x9df9f3
+      @@base0B = 0x8ef75a
+      @@base0C = 0xfeed9a
+      @@base0D = 0xffc757
+      @@base0E = 0xc16aff
+      @@base0F = 0x3c64b2
       super
       @name = @@theme_name
     end
